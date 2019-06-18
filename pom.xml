@@ -10,8 +10,6 @@
 	<url>http://maven.apache.org</url>
 
 	<properties>
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>
 		<spring.version>5.1.7.RELEASE</spring.version>
 		<thymeleaf.version>3.0.11.RELEASE</thymeleaf.version>
 		<log4j.version>1.2.17</log4j.version>
@@ -20,9 +18,12 @@
 		<hibernate-validator>6.0.7.Final</hibernate-validator>
 		<aspectj.version>1.6.10</aspectj.version>
 		<dbcp.version>1.4</dbcp.version>
-		<servletapi.version>2.5</servletapi.version>
 		<servlet-api>3.1.0</servlet-api>
 		<mysql-connector-java>8.0.11</mysql-connector-java>
+		<java.version>1.8</java.version>
+		<maven-war-plugin.version>2.6</maven-war-plugin.version>
+		<maven-compiler-plugin.version>3.5.1</maven-compiler-plugin.version>
+		
 	</properties>
 
 
@@ -39,12 +40,6 @@
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
 			<version>${hibernate.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.hibernate.common</groupId>
-			<artifactId>hibernate-commons-annotations</artifactId>
-			<version>5.0.1.Final</version>
 		</dependency>
 
 		<!-- Hibernate Validator -->
@@ -165,7 +160,30 @@
 			<version>${log4j.version}</version>
 		</dependency>
 	</dependencies>
+
 	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>${maven-war-plugin.version}</version>
+				<configuration>
+					<warSourceDirectory>WebContent</warSourceDirectory>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven-compiler-plugin.version}</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
+
+		</plugins>
+
 		<finalName>beanconnecta</finalName>
 	</build>
 </project>
