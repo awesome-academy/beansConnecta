@@ -43,3 +43,5 @@ target
 src/main/resources/mailconfig.properties
 src/main/resources/cloudinary-storage.properties
 .springBeans
+target/m2e-wtp/web-resources/META-INF/maven/java.vn.sun/beanconnecta/pom.properties
+bin/
