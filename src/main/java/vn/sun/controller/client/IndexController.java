@@ -8,6 +8,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class IndexController {
 	@RequestMapping("/")
 	public String hello() {
-		return "/client/views/index";
+		return "client/views/index";
+	}
+	
+	@RequestMapping("/login")
+	public String login() {
+		return "client/views/login";
 	}
 }
