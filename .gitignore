@@ -23,3 +23,9 @@
 hs_err_pid*
 
 target/
+
+#springtrash
+# eclipse config
+*.classpath
+*.settings
+target/m2e-wtp/web-resources/META-INF/maven/java.vn.sun/beanconnecta/pom.properties
