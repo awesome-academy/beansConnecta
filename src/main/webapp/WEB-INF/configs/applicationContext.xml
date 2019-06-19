@@ -46,4 +46,10 @@
 	<mvc:annotation-driven />
 	
 	<context:annotation-config />
+	
+	<bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
+    	<property name="environment">
+        	<bean class="org.springframework.web.context.support.StandardServletEnvironment"/>
+    	</property>
+	</bean>
 </beans>
