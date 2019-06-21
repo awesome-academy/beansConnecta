@@ -1,4 +1,4 @@
-package vn.sun.services.impl.client;
+package vn.sun.services.client.impl;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package vn.sun.DAO.impl.client;
+package vn.sun.DAO.client.impl;
 
 import java.io.Serializable;
 import java.util.List;

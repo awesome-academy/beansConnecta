@@ -9,7 +9,7 @@
     http://www.springframework.org/schema/mvc 
     http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-	<context:component-scan base-package="vn.sun" />
+	<context:component-scan base-package="vn.sun.controller" />
 
 	<mvc:resources location="/client/assets/" mapping="/client/assets/**"></mvc:resources>
 
