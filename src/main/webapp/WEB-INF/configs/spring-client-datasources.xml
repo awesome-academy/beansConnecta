@@ -12,7 +12,7 @@
 	<tx:annotation-driven proxy-target-class="true"
 		transaction-manager="transactionManager" />
 
-	<context:property-placeholder location="classpath*:hibernate.properties" />
+	<context:property-placeholder location="classpath:hibernate.properties" />
 
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource" >

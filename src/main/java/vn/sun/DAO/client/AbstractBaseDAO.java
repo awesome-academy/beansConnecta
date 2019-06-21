@@ -6,11 +6,13 @@ import java.lang.reflect.ParameterizedType;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
 
 public abstract class AbstractBaseDAO<PK extends Serializable, T> extends HibernateDaoSupport {
 
 	@Autowired
+	@Qualifier("sessionFactory")
 	SessionFactory sessionFactory;
 
 	public Session getSession() {

@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="usersDAO" class="vn.sun.DAO.impl.client.UsersDAOImpl">
+	<bean id="usersDAO" class="vn.sun.DAO.client.impl.UsersDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 </beans>
