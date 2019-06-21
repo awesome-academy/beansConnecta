@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"
+<html xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	layout:decorate="client/views/fragments/base-layout">
-<title>Bean Connecta - Connect the future</title>
+	
+<title th:text="#{client.index.title}"></title>
 
 <div class="container" layout:fragment="content">
 	<div class="hero-wrap js-fullheight">
@@ -21,7 +22,7 @@
 							We have <span class="number" data-number="200000">0</span> great
 							job offers you deserve!
 						</p>
-						<h1 class="mb-5">Largets Job Site In The World</h1>
+						<h1 class="mb-5" th:text="#{client.index.quote}"></h1>
 
 						<div class="ftco-search">
 							<div class="row">
@@ -34,7 +35,7 @@
 
 										<a class="nav-link" id="v-pills-2-tab" data-toggle="pill"
 											href="#v-pills-2" role="tab" aria-controls="v-pills-2"
-											aria-selected="false">Find a Candidate</a>
+											aria-selected="false" th:text="#{client.index.findCandidate}"></a>
 
 									</div>
 								</div>

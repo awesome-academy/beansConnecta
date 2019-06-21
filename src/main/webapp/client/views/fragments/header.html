@@ -5,26 +5,37 @@
             ftco-navbar-light"
 		id="ftco-navbar">
 		<div class="container">
-			<a class="navbar-brand" href="index.html">Beans Connecta</a>
+			<a class="navbar-brand" href="index.html" th:text="#{client.index.homepageLabel}"></a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#ftco-nav" aria-controls="ftco-nav"
-				aria-expanded="false" aria-label="Toggle navigation">
-				<span class="oi oi-menu"></span> Menu
+				aria-expanded="false" aria-label="Toggle navigation" 
+				th:text="#{client.index.btnMenu}"> 
+				<span class="oi oi-menu"></span>
 			</button>
 
 			<div class="collapse navbar-collapse" id="ftco-nav">
 				<ul class="navbar-nav ml-auto">
+
 					<li class="nav-item active"><a href="index.html"
-						class="nav-link">Home</a></li>
+						class="nav-link" th:text="#{client.index.navLinkHome}"></a></li> 
+
 					<li class="nav-item"><a href="candidates.html"
-						class="nav-link">Candidates</a></li>
-					<li class="nav-item"><a href="blog.html" class="nav-link">Companies</a></li>
-					<li class="nav-item"><a href="contact.html" class="nav-link">Jobs</a></li>
-					<li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-					<li class="nav-item cta mr-md-1"><a href="new-post.html"
-						class="nav-link">Sign up</a></li>
+						class="nav-link" th:text="#{client.index.navLinkCandidate}"></a></li>
+
+					<li class="nav-item"><a href="companies.html" 
+						class="nav-link" th:text="#{client.index.navLinkCompany}"></a></li>
+
+					<li class="nav-item"><a href="jobs.html" 
+						class="nav-link" th:text="#{client.index.navLinkJob}"></a></li>
+
+					<li class="nav-item"><a href="about.html" 
+						class="nav-link" th:text="#{client.index.navLinkAbout}"></a></li> 
+						
+					<li class="nav-item cta mr-md-1"><a href="signup.html"
+						class="nav-link" th:text="#{client.index.navLinkSignup}"></a></li>
+
 					<li class="nav-item cta cta-colored"><a href="login.html"
-						class="nav-link">Sign in</a></li>
+						class="nav-link" th:text="#{client.index.navLinkSignin}"></a></li>
 				</ul>
 			</div>
 		</div>
