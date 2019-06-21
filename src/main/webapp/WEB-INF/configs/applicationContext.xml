@@ -11,8 +11,8 @@
 
 	<context:component-scan base-package="vn.sun" />
 
-	<mvc:resources location="/client/assets/"
-		mapping="/client/assets/**"></mvc:resources>
+	<mvc:resources location="/client/assets/" mapping="/client/assets/**"></mvc:resources>
+
 
 	<mvc:annotation-driven />
 
@@ -43,5 +43,7 @@
 		<bean parent="localeChangeInterceptor" />
 	</mvc:interceptors>
 
-
+	<mvc:annotation-driven />
+	
+	<context:annotation-config />
 </beans>
