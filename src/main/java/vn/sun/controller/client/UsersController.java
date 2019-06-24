@@ -16,8 +16,8 @@ public class UsersController {
 	private UsersServices userService;
 
 	@GetMapping("/")
-	public String listUsers(Model model) {
+	public String index(Model model) {
 		model.addAttribute("users", userService.loadUsers());
-		return "users";
+		return "client/views/users";
 	}
 }

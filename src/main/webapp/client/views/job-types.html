@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head lang="en"></head>
+  <body>
+    <div id="containers">
+      <div id="content">
+        <tbody>
+          <tr th:each="jobType : ${jobTypes}">
+            <td th:text="${jobType.id}"><td>
+            <td th:text="${jobType.name}"><td>
+          </tr>
+        </tbody>
+      </div>
+    </div>
+  </body>
+</html>
