@@ -1,141 +1,141 @@
 <!DOCTYPE html>
 
 <html xmlns:th="http://www.thymeleaf.org"
-	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-	layout:decorate="client/views/fragments/base-layout">
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="client/views/fragments/base-layout">
 
-<title th:text="#{client.login.title}"></title>
+  <title th:text="#{client.login.title}"></title>
 
-<div class="container" layout:fragment="content">
-	<div class="hero-wrap js-fullheight">
-		<div class="overlay"></div>
-		<div class="container-fluid px-0">
-			<div
-				class="row d-md-flex no-gutters slider-text align-items-end
-	                    js-fullheight justify-content-end">
-				<img class="one-third align-self-end order-md-last img-fluid"
-					src="images/undraw_work_time_lhoj.svg"
-					th:attr="src=@{/client/assets/images/undraw_work_time_lhoj.svg}"
-					alt="">
-				<div
-					class="one-forth d-flex align-items-center ftco-animate
-	                        js-fullheight">
-					<div class="text mt-5 login-box">
-						<div class="ftco-search">
-							<div class="row">
-								<div class="col-md-6 tab-wrap">
-									<div class="tab-content p-4" id="v-pills-tabContent">
-										<div class="tab-pane fade show active" id="v-pills-1"
-											aria-labelledby="v-pills-nextgen-tab">
-											<form action="#" class="search-job">
-												<div class="form-row login-cell">
-													<div class="form-group">
-														<div class="form-field login-field">
-															<div class="icon">
-																<span class="icon-user"></span>
-															</div>
-															<input type="text" class="form-control"
-																placeholder="email">
-														</div>
-													</div>
-												</div>
-												<div class="form-row login-cell">
-													<div class="form-group">
-														<div class="form-field login-field">
-															<div class="icon">
-																<span class="icon-lock"></span>
-															</div>
-															<input type="text" class="form-control"
-																placeholder="password">
-														</div>
-													</div>
-												</div>
-										</div>
-										<div class="form-row login-cell">
-											<div class="form-group">
-												<div class="form-field">
-													<button type="submit"
-														class="form-control btn btn-secondary"
-														th:text="#{client.login.buttonLogin}"></button>
-												</div>
-											</div>
-											</form>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<p class="mb-4 mt-1 pt-1">With or without you, Thanos still
-							bad-ass</p>
-						<h1 class="mb-5">Largets Job Site In The World</h1>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+  <div layout:fragment="content">
+    <div class="hero-wrap js-fullheight">
+      <div class="overlay"></div>
+      <div class="container-fluid px-0">
+        <div
+          class="row d-md-flex no-gutters slider-text align-items-end
+          js-fullheight justify-content-end">
+          <img class="one-third align-self-end order-md-last img-fluid"
+            src="images/undraw_work_time_lhoj.svg"
+            th:attr="src=@{/client/assets/images/undraw_work_time_lhoj.svg}"
+            alt="">
+          <div
+            class="one-forth d-flex align-items-center ftco-animate
+            js-fullheight">
+            <div class="text mt-5 login-box">
+              <div class="ftco-search">
+                <div class="row">
+                  <div class="col-md-6 tab-wrap">
+                    <div class="tab-content p-4" id="v-pills-tabContent">
+                      <div class="tab-pane fade show active" id="v-pills-1"
+                        aria-labelledby="v-pills-nextgen-tab">
+                        <form action="#" class="search-job">
+                          <div class="form-row login-cell">
+                            <div class="form-group">
+                              <div class="form-field login-field">
+                                <div class="icon">
+                                  <span class="icon-user"></span>
+                                </div>
+                                <input type="text" class="form-control"
+                                  placeholder="email">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-row login-cell">
+                            <div class="form-group">
+                              <div class="form-field login-field">
+                                <div class="icon">
+                                  <span class="icon-lock"></span>
+                                </div>
+                                <input type="text" class="form-control"
+                                  placeholder="password">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-row login-cell">
+                          <div class="form-group">
+                            <div class="form-field">
+                              <button type="submit"
+                                class="form-control btn btn-secondary"
+                                th:text="#{client.login.buttonLogin}"></button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p class="mb-4 mt-1 pt-1">With or without you, Thanos still
+                bad-ass</p>
+              <h1 class="mb-5">Largets Job Site In The World</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-	<!--OK-->
-	<section class="ftco-section services-section bg-primary">
-		<div class="container">
-			<div class="row d-flex">
-				<div
-					class="col-md-3 d-flex align-self-stretch
-	                        ftco-animate">
-					<div class="media block-6 services d-block">
-						<div class="icon">
-							<span class="flaticon-resume"></span>
-						</div>
-						<div class="media-body">
-							<h3 class="heading mb-3">Search Millions of Jobs</h3>
-							<p>A small river named Duden flows by their place and
-								supplies.</p>
-						</div>
-					</div>
-				</div>
-				<div
-					class="col-md-3 d-flex align-self-stretch
-	                        ftco-animate">
-					<div class="media block-6 services d-block">
-						<div class="icon">
-							<span class="flaticon-collaboration"></span>
-						</div>
-						<div class="media-body">
-							<h3 class="heading mb-3">Easy To Manage Jobs</h3>
-							<p>A small river named Duden flows by their place and
-								supplies.</p>
-						</div>
-					</div>
-				</div>
-				<div
-					class="col-md-3 d-flex align-self-stretch
-	                        ftco-animate">
-					<div class="media block-6 services d-block">
-						<div class="icon">
-							<span class="flaticon-promotions"></span>
-						</div>
-						<div class="media-body">
-							<h3 class="heading mb-3">Top Careers</h3>
-							<p>A small river named Duden flows by their place and
-								supplies.</p>
-						</div>
-					</div>
-				</div>
-				<div
-					class="col-md-3 d-flex align-self-stretch
-	                        ftco-animate">
-					<div class="media block-6 services d-block">
-						<div class="icon">
-							<span class="flaticon-employee"></span>
-						</div>
-						<div class="media-body">
-							<h3 class="heading mb-3">Search Expert Candidates</h3>
-							<p>A small river named Duden flows by their place and
-								supplies.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-</div>
+    <!--OK-->
+    <section class="ftco-section services-section bg-primary">
+      <div class="container">
+        <div class="row d-flex">
+          <div
+            class="col-md-3 d-flex align-self-stretch
+            ftco-animate">
+            <div class="media block-6 services d-block">
+              <div class="icon">
+                <span class="flaticon-resume"></span>
+              </div>
+              <div class="media-body">
+                <h3 class="heading mb-3">Search Millions of Jobs</h3>
+                <p>A small river named Duden flows by their place and
+                  supplies.</p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-3 d-flex align-self-stretch
+            ftco-animate">
+            <div class="media block-6 services d-block">
+              <div class="icon">
+                <span class="flaticon-collaboration"></span>
+              </div>
+              <div class="media-body">
+                <h3 class="heading mb-3">Easy To Manage Jobs</h3>
+                <p>A small river named Duden flows by their place and
+                  supplies.</p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-3 d-flex align-self-stretch
+            ftco-animate">
+            <div class="media block-6 services d-block">
+              <div class="icon">
+                <span class="flaticon-promotions"></span>
+              </div>
+              <div class="media-body">
+                <h3 class="heading mb-3">Top Careers</h3>
+                <p>A small river named Duden flows by their place and
+                  supplies.</p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-3 d-flex align-self-stretch
+            ftco-animate">
+            <div class="media block-6 services d-block">
+              <div class="icon">
+                <span class="flaticon-employee"></span>
+              </div>
+              <div class="media-body">
+                <h3 class="heading mb-3">Search Expert Candidates</h3>
+                <p>A small river named Duden flows by their place and
+                  supplies.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 </html>

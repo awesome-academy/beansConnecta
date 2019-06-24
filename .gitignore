@@ -26,14 +26,12 @@ hs_err_pid*
 
 # Data source file
 .settings
-target
+target/
 src/main/resources/google-login.properties
 src/main/resources/mailconfig.properties
 src/main/resources/datasources.properties
 src/main/resources/facebook-api.properties
 .idea
-target
-
 
 # eclipse config
 *.classpath
