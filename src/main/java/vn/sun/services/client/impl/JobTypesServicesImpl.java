@@ -19,8 +19,8 @@ public class JobTypesServicesImpl implements JobTypesServices {
 		return JobTypesDAO;
 	}
 
-	public void setJobTypesDAO(JobTypesDAO userDAO) {
-		this.JobTypesDAO = userDAO;
+	public void setJobTypesDAO(JobTypesDAO jobTypeDAO) {
+		this.JobTypesDAO = jobTypeDAO;
 	}
 
 	@Override

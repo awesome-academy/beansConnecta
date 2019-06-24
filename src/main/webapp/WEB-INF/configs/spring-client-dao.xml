@@ -7,8 +7,14 @@
 	<bean id="usersDAO" class="vn.sun.DAO.client.impl.UsersDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	
-	<bean id="jobTypesDAO" class="vn.sun.DAO.client.impl.JobTypesDAOImpl">
+
+	<bean id="jobTypesDAO"
+		class="vn.sun.DAO.client.impl.JobTypesDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="companiesDAO"
+		class="vn.sun.DAO.client.impl.CompaniesDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 	

@@ -16,12 +16,12 @@ public class JobsController {
 	
 	@RequestMapping("/")
 	public String index(Model model) {
-		return "client/views/job-list";
+		return "client/views/jobs/index-jobs";
 	}
 	
 	@RequestMapping("/types")
 	public String jobTypesIndex(Model model) {
 		model.addAttribute("jobTypes", jobTypeService.loadJobTypes());
-		return "client/views/job-types";
+		return "client/views/jobs/index-jobTypes";
 	}
 }

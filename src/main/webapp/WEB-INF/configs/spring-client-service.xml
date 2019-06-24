@@ -28,4 +28,11 @@
 		</property>
 	</bean>
 
+	<bean id="companiesService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="vn.sun.services.client.impl.CompaniesServicesImpl">
+				<property name="companiesDAO" ref="companiesDAO" />
+			</bean>
+		</property>
+	</bean>
 </beans>
