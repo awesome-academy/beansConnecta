@@ -9,7 +9,7 @@ import vn.sun.services.client.JobTypesServices;
 
 @Controller
 @RequestMapping("/jobs")
-public class JobsController {
+public class JobsController extends BaseController {
 	
 	@Autowired(required = true)
 	private JobTypesServices jobTypeService;

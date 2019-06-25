@@ -36,7 +36,7 @@ public class Candidates {
 	private boolean gender;
 	
 	@Lob
-    @Column(name = "photo", columnDefinition="BLOB")
+    @Column(name = "image", columnDefinition="BLOB")
     private byte[] image;
 	
 	@Column(name="city")
