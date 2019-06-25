@@ -4,21 +4,21 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="usersDAO" class="vn.sun.DAO.client.impl.UsersDAOImpl">
+	<bean id="usersDAO" class="vn.sun.DAO.client.impl.UserDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 
 	<bean id="jobTypesDAO"
-		class="vn.sun.DAO.client.impl.JobTypesDAOImpl">
+		class="vn.sun.DAO.client.impl.JobTypeDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 
 	<bean id="companiesDAO"
-		class="vn.sun.DAO.client.impl.CompaniesDAOImpl">
+		class="vn.sun.DAO.client.impl.CompanyDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 	
-	<bean id="candidatesDAO" class="vn.sun.DAO.client.impl.CandidatesDAOImpl">
+	<bean id="candidatesDAO" class="vn.sun.DAO.client.impl.CandidateDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 </beans>

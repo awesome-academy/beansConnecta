@@ -4,7 +4,8 @@ import java.util.List;
 
 import vn.sun.entities.Company;
 
-public interface CompaniesServices {
+public interface CompanyServices {
 	public List<Company> loadCompanies();
+	public void createCompany();
 	
 }

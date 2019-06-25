@@ -16,7 +16,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.context.i18n.LocaleContextHolder;
 
 import vn.sun.bean.UserInfo;
-import vn.sun.entities.Users;
+import vn.sun.entities.User;
 import vn.sun.helper.UserConvertHelper;
 
 @Controller
@@ -43,8 +43,8 @@ public class RegisterController extends BaseController {
 		if(!validateRegisterForm(model, userInfo, bindingResult)) 
 			return "/client/views/register"; 
 		
-		Users user =  UserConvertHelper.convertUserInfoToUserForRegister(userInfo);
-		usersServices.saveUserAfterRegister(user);
+		User user =  UserConvertHelper.convertUserInfoToUserForRegister(userInfo);
+		userServices.saveUserAfterRegister(user);
 		// some mail services here later
 		return "redirect:/";
 	}
@@ -52,7 +52,7 @@ public class RegisterController extends BaseController {
 	private boolean validateRegisterForm(final Model model, UserInfo userInfo, 
 			BindingResult bindingResult) {
 
-		if(!usersServices.isUserEmailExisted(userInfo.getEmail())) {
+		if(!userServices.isUserEmailExisted(userInfo.getEmail())) {
 			model.addAttribute(
 				"emailExistedError", 
 				messageSource.getMessage("user.register.emailExisted", null, LocaleContextHolder.getLocale())

@@ -18,7 +18,7 @@ import org.hibernate.annotations.Type;
 
 @Entity
 @Table(name = "candidates")
-public class Candidates {
+public class Candidate {
 
 	@Id
 	@Column(name="id")
@@ -55,9 +55,9 @@ public class Candidates {
 	
 	@OneToOne
 	@JoinColumn(name="userId")
-	private Users users;
+	private User users;
 
-	public Candidates() {
+	public Candidate() {
 
 	}
 
@@ -133,11 +133,11 @@ public class Candidates {
 		this.objective = objective;
 	}
 
-	public Users getUser() {
+	public User getUser() {
 		return users;
 	}
 
-	public void setUser(Users user) {
+	public void setUser(User user) {
 		this.users = user;
 	}
 }
