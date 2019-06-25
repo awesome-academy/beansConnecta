@@ -1,13 +1,17 @@
 package vn.sun.entities;
 
 import java.util.Date;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -52,9 +56,13 @@ public class Users {
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "updateTime")
 	private Date updateTime;
+	
+	@OneToOne(mappedBy = "users", cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY, optional = false)
+	private Candidates candidates;
 
 	public Users() {
-		// TODO Auto-generated constructor stub
+
 	}
 
 	public int getId() {
@@ -111,6 +119,14 @@ public class Users {
 
 	public void setUpdateTime(Date updateTime) {
 		this.updateTime = updateTime;
+	}
+
+	public Candidates getCandidate() {
+		return candidates;
+	}
+
+	public void setCandidate(Candidates candidate) {
+		this.candidates = candidate;
 	}	
 	
 }
