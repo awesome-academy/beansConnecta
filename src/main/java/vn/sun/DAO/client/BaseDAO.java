@@ -8,4 +8,6 @@ public interface BaseDAO<PK, T> {
 	
 	T findById(Serializable PK);
 	
+	void delete(T entity);
+	
 }

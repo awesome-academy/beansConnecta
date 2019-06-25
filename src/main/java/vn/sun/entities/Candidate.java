@@ -1,6 +1,7 @@
 package vn.sun.entities;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -55,7 +57,37 @@ public class Candidate {
 	
 	@OneToOne
 	@JoinColumn(name="userId")
-	private User users;
+	private User user;
+	
+	@OneToMany(mappedBy="candidate")
+	private List<Skill> skills;
+	
+	@OneToMany(mappedBy="candidate")
+	private List<Experience> experiences;
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public List<Skill> getSkills() {
+		return skills;
+	}
+
+	public void setSkills(List<Skill> skills) {
+		this.skills = skills;
+	}
+
+	public List<Experience> getExperiences() {
+		return experiences;
+	}
+
+	public void setExperiences(List<Experience> experiences) {
+		this.experiences = experiences;
+	}
 
 	public Candidate() {
 
@@ -133,11 +165,4 @@ public class Candidate {
 		this.objective = objective;
 	}
 
-	public User getUser() {
-		return users;
-	}
-
-	public void setUser(User user) {
-		this.users = user;
-	}
 }

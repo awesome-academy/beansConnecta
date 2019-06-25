@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 
 import vn.sun.DAO.client.CompanyDAO;
 import vn.sun.entities.Company;
@@ -34,10 +35,36 @@ public class CompanyServicesImpl implements CompanyServices {
 	@Override
 	public Company findById(Serializable key) {
 		try {
-			return CompanyDAO.findById(key);
-		} catch (Exception e) {
-			logger.error("has error by loadCompanyJobs method");
+			Company result_company = CompanyDAO.findById(key);
+			if (result_company != null) return result_company;
+			logger.error("company result is null");
 			return null;
+
+		} catch (DataIntegrityViolationException e) {
+			logger.error("Cant not find this Company");
+			return null;
+		}
+
+	}
+
+	@Override
+	public Company saveOrUpdate(Company company) {
+		try {
+			CompanyDAO.saveOrUpdate(company);
+		} catch (DataIntegrityViolationException e) {
+			logger.error("Cant save or update");
+			throw e;
+		}
+		return company;
+	}
+
+	@Override
+	public void delete(Company company) {
+		try {
+			CompanyDAO.delete(company);
+		} catch (DataIntegrityViolationException e) {
+			logger.error("Cant not delete");
+			throw e;
 		}
 	}
 

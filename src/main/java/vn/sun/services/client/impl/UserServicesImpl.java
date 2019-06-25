@@ -1,9 +1,11 @@
 package vn.sun.services.client.impl;
 
+import java.io.Serializable;
 import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 
 import vn.sun.DAO.client.UserDAO;
 import vn.sun.entities.User;
@@ -47,4 +49,37 @@ public class UserServicesImpl implements UserServices {
 		return (userInDB == null) ? false : true;
 	}
 
+	@Override
+	public User saveOrUpdate(User user) {
+		try {
+			userDAO.saveOrUpdate(user);
+		} catch (DataIntegrityViolationException e) {
+			logger.error("Cant save or update user");
+			throw e;
+		}
+		return user;
+	}
+
+	@Override
+	public User findById(Serializable key) {
+		try {
+			User result_user = userDAO.findById(key);
+			if (result_user != null) return result_user;
+			logger.error("user is null");
+			return null;
+		} catch (DataIntegrityViolationException e) {
+			logger.error("Cant find user");
+			return null;
+		}
+	}
+
+	@Override
+	public void delete(User user) {
+		try {
+			userDAO.delete(user);
+		} catch (DataIntegrityViolationException e) {
+			logger.error("Cant delete user");
+			throw e;
+		}
+	}
 }

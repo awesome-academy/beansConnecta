@@ -14,6 +14,7 @@ import vn.sun.entities.Job;
 
 @Repository
 public class CompanyDAOImpl extends AbstractBaseDAO<Serializable, Company> implements CompanyDAO {
+	
 	private static final Logger logger = Logger.getLogger(CompanyDAOImpl.class);
 
 	@SuppressWarnings("unchecked")

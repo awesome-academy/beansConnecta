@@ -5,7 +5,6 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.hibernate.LockMode;
-import org.springframework.dao.DataIntegrityViolationException;
 
 import vn.sun.DAO.client.AbstractBaseDAO;
 import vn.sun.DAO.client.CandidateDAO;
