@@ -2,9 +2,9 @@ package vn.sun.services.client;
 
 import java.util.List;
 
-import vn.sun.entities.Companies;
+import vn.sun.entities.Company;
 
 public interface CompaniesServices {
-	public List<Companies> loadCompanies();
+	public List<Company> loadCompanies();
 	
 }
