@@ -2,9 +2,9 @@ package vn.sun.DAO.client;
 
 import java.util.List;
 
-import vn.sun.entities.JobTypes;
+import vn.sun.entities.JobType;
 
-public interface JobTypesDAO extends BaseDAO<Integer, JobTypes> {
-	List<JobTypes> loadEntities();
+public interface JobTypesDAO extends BaseDAO<Integer, JobType> {
+	List<JobType> loadEntities();
 
 }

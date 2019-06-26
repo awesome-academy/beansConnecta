@@ -8,16 +8,16 @@ import org.springframework.stereotype.Repository;
 
 import vn.sun.DAO.client.AbstractBaseDAO;
 import vn.sun.DAO.client.JobTypesDAO;
-import vn.sun.entities.JobTypes;
+import vn.sun.entities.JobType;
 
 @Repository
-public class JobTypesDAOImpl extends AbstractBaseDAO<Serializable, JobTypes> implements JobTypesDAO {
+public class JobTypesDAOImpl extends AbstractBaseDAO<Serializable, JobType> implements JobTypesDAO {
 	private static final Logger logger = Logger.getLogger(JobTypesDAOImpl.class);
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<JobTypes> loadEntities() {
+	public List<JobType> loadEntities() {
 		logger.info("load jobTypes");
-		return getSession().createQuery("from JobTypes").getResultList();
+		return getSession().createQuery("from JobType").getResultList();
 	}
 
 }

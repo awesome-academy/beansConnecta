@@ -6,7 +6,7 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import vn.sun.DAO.client.JobTypesDAO;
-import vn.sun.entities.JobTypes;
+import vn.sun.entities.JobType;
 import vn.sun.services.client.JobTypesServices;
 
 public class JobTypesServicesImpl implements JobTypesServices {
@@ -24,7 +24,7 @@ public class JobTypesServicesImpl implements JobTypesServices {
 	}
 
 	@Override
-	public List<JobTypes> loadJobTypes() {
+	public List<JobType> loadJobTypes() {
 		try {
 			return JobTypesDAO.loadEntities();
 		} catch (Exception e) {

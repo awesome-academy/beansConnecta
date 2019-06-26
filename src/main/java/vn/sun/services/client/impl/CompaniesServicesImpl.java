@@ -6,7 +6,7 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import vn.sun.DAO.client.CompaniesDAO;
-import vn.sun.entities.Companies;
+import vn.sun.entities.Company;
 import vn.sun.services.client.CompaniesServices;
 
 public class CompaniesServicesImpl implements CompaniesServices {
@@ -24,7 +24,7 @@ public class CompaniesServicesImpl implements CompaniesServices {
 	}
 
 	@Override
-	public List<Companies> loadCompanies() {
+	public List<Company> loadCompanies() {
 		try {
 			return CompaniesDAO.loadEntities();
 		} catch (Exception e) {

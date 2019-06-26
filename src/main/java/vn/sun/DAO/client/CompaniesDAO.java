@@ -2,8 +2,8 @@ package vn.sun.DAO.client;
 
 import java.util.List;
 
-import vn.sun.entities.Companies;
+import vn.sun.entities.Company;
 
-public interface CompaniesDAO extends BaseDAO<Integer, Companies> {
-	List<Companies> loadEntities();
+public interface CompaniesDAO extends BaseDAO<Integer, Company> {
+	List<Company> loadEntities();
 }
