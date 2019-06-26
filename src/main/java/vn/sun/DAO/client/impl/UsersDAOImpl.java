@@ -14,11 +14,21 @@ import vn.sun.entities.Users;
 public class UsersDAOImpl extends AbstractBaseDAO<Serializable, Users> implements UsersDAO {
 
 	private static final Logger logger = Logger.getLogger(UsersDAOImpl.class);
+
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Users> loadEntities() {
 		logger.info("load users");
 		return getSession().createQuery("from Users").getResultList();
+	}
+
+	@Override
+	public Users findUserByEmail(String email) {
+		Users user = (Users) getSession()
+				.createQuery("from Users u where u.email = :email")
+				.setParameter("email", email)
+				.uniqueResult();
+		return user;
 	}
 
 }

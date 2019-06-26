@@ -38,11 +38,11 @@ public class Users {
 	@Type(type="text")
 	private String password;
 	
-	
-	private enum role {
+	public enum role {
 		COMPANY,
 		CANDIDATE
 	}
+	
 	@Column(columnDefinition = "enum('COMPANY','CANDIDATE')")
 	@Enumerated(EnumType.STRING)
 	private role role;
@@ -58,7 +58,7 @@ public class Users {
 	private Date updateTime;
 	
 	@OneToOne(mappedBy = "users", cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY, optional = false)
+            fetch = FetchType.LAZY)
 	private Candidates candidates;
 
 	public Users() {

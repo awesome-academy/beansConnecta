@@ -7,4 +7,7 @@ import vn.sun.entities.Users;
 public interface UsersServices {
 
 	public List<Users> loadUsers();
+	
+	boolean saveUserAfterRegister(Users user);
+	boolean isUserEmailExisted(String email);
 }

@@ -6,5 +6,5 @@ import vn.sun.entities.Users;
 
 public interface UsersDAO extends BaseDAO<Integer, Users> {
 	List<Users> loadEntities();
-
+	Users findUserByEmail(String email);
 }
