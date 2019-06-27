@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataIntegrityViolationException;
 
 import vn.sun.DAO.client.JobTypeDAO;
 import vn.sun.entities.JobType;
@@ -16,7 +15,7 @@ public class JobTypeServicesImpl implements JobTypeServices {
 	@Autowired
 	private JobTypeDAO JobTypeDAO;
 
-	public void setJobTypesDAO(JobTypeDAO jobTypeDAO) {
+	public void setJobTypeDAO(JobTypeDAO jobTypeDAO) {
 		this.JobTypeDAO = jobTypeDAO;
 	}
 
@@ -25,18 +24,8 @@ public class JobTypeServicesImpl implements JobTypeServices {
 		try {
 			return JobTypeDAO.loadEntities();
 		} catch (Exception e) {
-			logger.error("has error by loadJobTypes method");
+			logger.error("has error by loadJobType method");
 			return null;
-		}
-	}
-
-	@Override
-	public void createJobtype() {
-		JobType jtype = new JobType();
-		try {
-			JobTypeDAO.createEntity(jtype);
-		} catch (DataIntegrityViolationException e) {
-			logger.error("Cant save");
 		}
 	}
 

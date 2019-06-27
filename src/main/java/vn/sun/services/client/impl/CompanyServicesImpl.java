@@ -1,13 +1,14 @@
 package vn.sun.services.client.impl;
 
+import java.io.Serializable;
 import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataIntegrityViolationException;
 
 import vn.sun.DAO.client.CompanyDAO;
 import vn.sun.entities.Company;
+import vn.sun.entities.Job;
 import vn.sun.services.client.CompanyServices;
 
 public class CompanyServicesImpl implements CompanyServices {
@@ -16,7 +17,7 @@ public class CompanyServicesImpl implements CompanyServices {
 	@Autowired
 	private CompanyDAO CompanyDAO;
 
-	public void setCompaniesDAO(CompanyDAO companyDAO) {
+	public void setCompanyDAO(CompanyDAO companyDAO) {
 		this.CompanyDAO = companyDAO;
 	}
 
@@ -31,13 +32,23 @@ public class CompanyServicesImpl implements CompanyServices {
 	}
 
 	@Override
-	public void createCompany() {
-		Company company = new Company();
+	public Company findById(Serializable key) {
 		try {
-			CompanyDAO.createEntity(company);
-		} catch (DataIntegrityViolationException e) {
-			logger.error("Cant save");
+			return CompanyDAO.findById(key);
+		} catch (Exception e) {
+			logger.error("has error by loadCompanyJobs method");
+			return null;
 		}
 	}
 
+	@Override
+	public List<Job> loadCompanyJobs(Serializable key) {
+		try {
+			return CompanyDAO.loadCompanyJobs(key);
+		} catch (Exception e) {
+			logger.error("has error by loadCompanyJobs method");
+			return null;
+		}
+	}
+	
 }

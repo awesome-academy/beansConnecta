@@ -23,19 +23,4 @@ public class JobTypeDAOImpl extends AbstractBaseDAO<Serializable, JobType> imple
 		return getSession().createQuery("from JobType").getResultList();
 	}
 
-	@Override
-	public void createEntity(JobType jobType) {
-		getSession().persist(jobType);
-	}
-
-	@Override
-	public JobType findById(int key) {
-		JobType job_type_result = getSession().load(JobType.class, key, LockMode.OPTIMISTIC);
-		if (job_type_result == null) {
-			logger.error("Null object");
-			return null;
-		}
-		else return job_type_result;
-	}
-
 }

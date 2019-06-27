@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataIntegrityViolationException;
 
 import vn.sun.DAO.client.CandidateDAO;
 import vn.sun.entities.Candidate;
@@ -16,7 +15,7 @@ public class CandidateServicesImpl implements CandidateServices {
 	@Autowired
 	private CandidateDAO candidateDAO;
 
-	public void setCandidatesDAO(CandidateDAO candidateDAO) {
+	public void setCandidateDAO(CandidateDAO candidateDAO) {
 		this.candidateDAO = candidateDAO;
 	}
 
@@ -29,17 +28,5 @@ public class CandidateServicesImpl implements CandidateServices {
 			return null;
 		}
 	}
-
-	@Override
-	public void createCandidate() {
-		Candidate candidate = new Candidate();
-		try {
-			candidateDAO.createEntity(candidate);
-		} catch (DataIntegrityViolationException e) {
-			logger.error("Cant save");
-		}
-		
-	}
-	
 	
 }
