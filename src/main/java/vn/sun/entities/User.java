@@ -57,7 +57,7 @@ public class User {
 	@Column(name = "updateTime")
 	private Date updateTime;
 	
-	@OneToOne(mappedBy = "users", cascade = CascadeType.ALL,
+	@OneToOne(mappedBy = "user", cascade = CascadeType.ALL,
             fetch = FetchType.LAZY)
 	private Candidate candidate;
 
