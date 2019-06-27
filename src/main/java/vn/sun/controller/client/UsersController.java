@@ -6,14 +6,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import vn.sun.services.client.UsersServices;
+import vn.sun.services.client.UserServices;
 
 @Controller
 @RequestMapping("/users")
 public class UsersController {
 
 	@Autowired(required = true)
-	private UsersServices userService;
+	private UserServices userService;
 
 	@GetMapping("/")
 	public String index(Model model) {

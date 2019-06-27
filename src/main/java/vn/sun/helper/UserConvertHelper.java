@@ -3,7 +3,7 @@ package vn.sun.helper;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import vn.sun.bean.UserInfo;
-import vn.sun.entities.Users;
+import vn.sun.entities.User;
 
 public class UserConvertHelper {
 
@@ -12,13 +12,13 @@ public class UserConvertHelper {
 		return encoder.encode(password); 
 	}
 	
-	public static Users convertUserInfoToUserForRegister(UserInfo userInfo) {
-		Users user = new Users();
+	public static User convertUserInfoToUserForRegister(UserInfo userInfo) {
+		User user = new User();
 		user.setEmail(userInfo.getEmail());
 		user.setPassword(encodePassword(userInfo.getPassword()));
 		
 		// Set temporary only, will be fixed in next pulls
-		user.setRole(Users.role.CANDIDATE); 
+		user.setRole(User.role.CANDIDATE); 
 		
 		return user;
 	}

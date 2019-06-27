@@ -4,7 +4,7 @@ import java.util.List;
 
 import vn.sun.entities.JobType;
 
-public interface JobTypesDAO extends BaseDAO<Integer, JobType> {
+public interface JobTypeDAO extends BaseDAO<Integer, JobType> {
 	List<JobType> loadEntities();
 
 }

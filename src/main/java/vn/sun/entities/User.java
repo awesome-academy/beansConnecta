@@ -21,7 +21,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
 @Table(name="users")
-public class Users {
+public class User {
 
 	@Id
 	@Column(name="id")
@@ -59,9 +59,9 @@ public class Users {
 	
 	@OneToOne(mappedBy = "users", cascade = CascadeType.ALL,
             fetch = FetchType.LAZY)
-	private Candidates candidates;
+	private Candidate candidate;
 
-	public Users() {
+	public User() {
 
 	}
 
@@ -101,7 +101,7 @@ public class Users {
 		return role;
 	}
 
-	public void setRole(vn.sun.entities.Users.role role) {
+	public void setRole(vn.sun.entities.User.role role) {
 		this.role = role;
 	}
 
@@ -121,12 +121,12 @@ public class Users {
 		this.updateTime = updateTime;
 	}
 
-	public Candidates getCandidate() {
-		return candidates;
+	public Candidate getCandidate() {
+		return candidate;
 	}
 
-	public void setCandidate(Candidates candidate) {
-		this.candidates = candidate;
+	public void setCandidate(Candidate candidate) {
+		this.candidate = candidate;
 	}	
 	
 }

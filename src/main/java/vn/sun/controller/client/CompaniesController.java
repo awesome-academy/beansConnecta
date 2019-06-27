@@ -10,14 +10,14 @@ import org.springframework.web.bind.ServletRequestUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import vn.sun.entities.Company;
-import vn.sun.services.client.CompaniesServices;
+import vn.sun.services.client.CompanyServices;
 
 @Controller
 @RequestMapping("/companies")
 public class CompaniesController {
 	
 	@Autowired(required = true)
-	private CompaniesServices companyService;
+	private CompanyServices companyService;
 	
 	@RequestMapping("/")
 	public String index(HttpServletRequest request, Model modelMap) {
