@@ -42,9 +42,10 @@ public class RegisterController extends BaseController {
 
 		if(!validateRegisterForm(model, userInfo, bindingResult)) 
 			return "/client/views/register"; 
+	
 		
 		User user =  UserConvertHelper.convertUserInfoToUserForRegister(userInfo);
-		userServices.saveUserAfterRegister(user);
+		userService.saveUserAfterRegister(user);
 		// some mail services here later
 		return "redirect:/";
 	}
@@ -52,14 +53,14 @@ public class RegisterController extends BaseController {
 	private boolean validateRegisterForm(final Model model, UserInfo userInfo, 
 			BindingResult bindingResult) {
 
-		if(!userServices.isUserEmailExisted(userInfo.getEmail())) {
+		if(userService.isUserEmailExisted(userInfo.getEmail())) {
 			model.addAttribute(
 				"emailExistedError", 
 				messageSource.getMessage("user.register.emailExisted", null, LocaleContextHolder.getLocale())
 				);
 			return false;
 		}
-		if(!bindingResult.hasErrors()) return false;
+		if(bindingResult.hasErrors()) return false;
 	
 		return true;
 	}
