@@ -33,19 +33,4 @@ public class UserDAOImpl extends AbstractBaseDAO<Serializable, User> implements 
 		return user;
 	}
 
-	@Override
-	public User findById(int user_id) {
-		User user_result = getSession().load(User.class, user_id, LockMode.OPTIMISTIC);
-		if (user_result == null) {
-			logger.error("Null object");
-			return null;
-		}
-		else return user_result;
-	}
-
-	@Override
-	public void createEntity(User user) {
-		getSession().persist(user);
-	}
-
 }

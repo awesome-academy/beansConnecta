@@ -10,7 +10,7 @@ import vn.sun.services.client.JobTypeServices;
 @Controller
 @RequestMapping("/jobs")
 public class JobsController extends BaseController {
-	
+
 	@Autowired(required = true)
 	private JobTypeServices jobTypeService;
 	
@@ -18,7 +18,7 @@ public class JobsController extends BaseController {
 	public String index(Model model) {
 		return "client/views/jobs/index-jobs";
 	}
-	
+
 	@RequestMapping("/types")
 	public String jobTypesIndex(Model model) {
 		model.addAttribute("jobTypes", jobTypeService.loadJobTypes());

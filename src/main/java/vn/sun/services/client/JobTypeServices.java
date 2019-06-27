@@ -6,6 +6,5 @@ import vn.sun.entities.JobType;
 
 public interface JobTypeServices {
 	public List<JobType> loadJobTypes();
-	public void createJobtype();
-	
+
 }

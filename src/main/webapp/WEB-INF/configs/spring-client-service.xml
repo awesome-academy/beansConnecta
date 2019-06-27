@@ -7,31 +7,31 @@
 	<bean id="userService" parent="baseTransactionProxy">
 		<property name="target">
 			<bean class="vn.sun.services.client.impl.UserServicesImpl">
-				<property name="usersDAO" ref="usersDAO" />
+				<property name="userDAO" ref="userDAO" />
 			</bean>
 		</property>
 	</bean>
 
-	<bean id="jobTypesService" parent="baseTransactionProxy">
+	<bean id="jobTypeService" parent="baseTransactionProxy">
 		<property name="target">
 			<bean class="vn.sun.services.client.impl.JobTypeServicesImpl">
-				<property name="jobTypesDAO" ref="jobTypesDAO" />
+				<property name="jobTypeDAO" ref="jobTypeDAO" />
 			</bean>
 		</property>
 	</bean>
 	
-	<bean id="candidatesService" parent="baseTransactionProxy">
+	<bean id="candidateService" parent="baseTransactionProxy">
 		<property name="target">
 			<bean class="vn.sun.services.client.impl.CandidateServicesImpl">
-				<property name="candidatesDAO" ref="candidatesDAO" />
+				<property name="candidateDAO" ref="candidateDAO" />
 			</bean>
 		</property>
 	</bean>
 
-	<bean id="companiesService" parent="baseTransactionProxy">
+	<bean id="companyService" parent="baseTransactionProxy">
 		<property name="target">
 			<bean class="vn.sun.services.client.impl.CompanyServicesImpl">
-				<property name="companiesDAO" ref="companiesDAO" />
+				<property name="companyDAO" ref="companyDAO" />
 			</bean>
 		</property>
 	</bean>

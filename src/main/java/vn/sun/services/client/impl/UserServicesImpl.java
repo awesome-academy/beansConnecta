@@ -4,9 +4,6 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataIntegrityViolationException;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.ObjectError;
 
 import vn.sun.DAO.client.UserDAO;
 import vn.sun.entities.User;
@@ -18,7 +15,7 @@ public class UserServicesImpl implements UserServices {
 	@Autowired
 	private UserDAO userDAO;
 
-	public void setUsersDAO(UserDAO userDAO) {
+	public void setUserDAO(UserDAO userDAO) {
 		this.userDAO = userDAO;
 	}
 
@@ -48,16 +45,6 @@ public class UserServicesImpl implements UserServices {
 	public boolean isUserEmailExisted(String email) {
 		User userInDB = userDAO.findUserByEmail(email);
 		return (userInDB == null) ? false : true;
-	}
-
-	@Override
-	public void createUser() {
-		User user = new User();
-		try {
-			userDAO.createEntity(user);
-		} catch (DataIntegrityViolationException e) {
-			logger.error("error saving");
-		}
 	}
 
 }
