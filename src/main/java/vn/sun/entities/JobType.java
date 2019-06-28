@@ -15,6 +15,11 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "jobTypes")
 public class JobType {
+	@Override
+	public String toString() {
+		return "JobType [id=" + id + ", name=" + name + "]";
+	}
+
 	@Id
 	@Column(name = "id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

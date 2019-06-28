@@ -2,6 +2,7 @@ package vn.sun.services.client;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Map;
 
 import vn.sun.entities.Company;
 import vn.sun.entities.Job;
@@ -18,4 +19,5 @@ public interface CompanyServices {
 
 	List<Job> loadCompanyJobs(Serializable key);
 
+	Map<String,String> loadTopActive();
 }

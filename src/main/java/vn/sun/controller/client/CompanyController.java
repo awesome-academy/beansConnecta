@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import vn.sun.entities.Company;
 import vn.sun.entities.Job;
+import vn.sun.helper.Constants;
 import vn.sun.services.client.CompanyServices;
 
 @Controller
@@ -29,7 +30,7 @@ public class CompanyController {
 		PagedListHolder companies = new PagedListHolder<Company>(companyService.loadCompanies());
 		int page = ServletRequestUtils.getIntParameter(request, "page", 0);
 		companies.setPage(page);
-		companies.setPageSize(2);
+		companies.setPageSize(Constants.COMPANY_PAGESIZE);
 		modelMap.addAttribute("companies", companies);
 		return "client/views/companies/index-companies";
 	}

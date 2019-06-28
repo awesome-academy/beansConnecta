@@ -16,6 +16,19 @@ INSERT INTO `beansconnecta`.`companies` (`id`, `name`, `description`, `address`,
 INSERT INTO `beansconnecta`.`companies` (`id`, `name`, `description`, `address`, `city`, `scale`) VALUES ('7', 'JFE Systems','JFE Systems, Inc. is a Japan-based company mainly engaged in the planning, design, development, operation and maintenance of computer systems.' , '〒105-0023　東京都港区芝浦1丁目2-3 シーバンスＳ館（受付18F）' ,'Tokyo' ,'400-500');
 
 use beansconnecta;
+insert into companies (id, name, description, address, city, scale) values (8, 'Omba', 'Inspection of Left Lower Leg, Percutaneous Endoscopic Approach', '62 Reinke Place', 'Vrachnaíika', '193-756');
+insert into companies (id, name, description, address, city, scale) values (9, 'Eayo', 'Excision of Nasopharynx, Percutaneous Approach, Diagnostic', '80 Sloan Circle', 'Sirinhaém', '507-309');
+insert into companies (id, name, description, address, city, scale) values (10, 'Eabox', 'Destruction of Right Maxilla, Percutaneous Approach', '1846 Arapahoe Alley', 'Shimokizukuri', '787-391');
+insert into companies (id, name, description, address, city, scale) values (11, 'Pixope', 'Removal of Synthetic Substitute from Left Breast, External Approach', '5 Starling Place', 'Springfield', '020-723');
+insert into companies (id, name, description, address, city, scale) values (12, 'Wikivu', 'Dilation of Esophagus with Intraluminal Device, Via Natural or Artificial Opening Endoscopic', '28480 Mcguire Parkway', 'Memphis', '497-626');
+insert into companies (id, name, description, address, city, scale) values (13, 'Rhyzio', 'Destruction of Left Breast, Via Natural or Artificial Opening Endoscopic', '375 Nancy Court', 'Pakembangan', '910-640');
+insert into companies (id, name, description, address, city, scale) values (14, 'Gabspot', 'Removal of Infusion Device from Cervicothoracic Vertebral Disc, Percutaneous Approach', '9 Huxley Way', 'Miami', '611-198');
+insert into companies (id, name, description, address, city, scale) values (15, 'Yakijo', 'Extraction of Pudendal Nerve, Open Approach', '926 7th Court', 'Cataguases', '018-829');
+insert into companies (id, name, description, address, city, scale) values (16, 'Livetube', 'Plaque Radiation of Esophagus', '426 Menomonie Hill', 'Tatarka', '895-672');
+insert into companies (id, name, description, address, city, scale) values (17, 'Devbug', 'Motor Function Treatment of Neurological System - Lower Back / Lower Extremity', '55241 Londonderry Way', 'Jiangning', '469-440');
+insert into companies (id, name, description, address, city, scale) values (18, 'Agivu', 'Supplement Left Axillary Artery with Nonautologous Tissue Substitute, Percutaneous Approach', '1436 Packers Trail', 'Concepcion', '956-281');
+insert into companies (id, name, description, address, city, scale) values (19, 'Trudoo', 'Drainage of Left Renal Vein, Open Approach', '97 Rusk Lane', 'Glinka', '880-495');
+insert into companies (id, name, description, address, city, scale) values (20, 'Shufflebeat', 'Repair Coronary Artery, One Artery, Percutaneous Approach', '881 Basil Road', 'Vom', '800-716');
 insert into jobs (id, title, description, requirement, tag, minPay, maxPay, quantity, companyId, jobTypeId) values (1, 'General Manager', 'Revision of Drainage Device in Right Shoulder Joint, Percutaneous Approach', 'Microsoft Publisher', 4, '201.06', '3715.60', 13, 2, 6);
 insert into jobs (id, title, description, requirement, tag, minPay, maxPay, quantity, companyId, jobTypeId) values (2, 'VP Sales', 'Removal of Nonautologous Tissue Substitute from Left Thumb Phalanx, Open Approach', 'Title Insurance', 1, '438.59', '1876.57', 7, 5, 2);
 insert into jobs (id, title, description, requirement, tag, minPay, maxPay, quantity, companyId, jobTypeId) values (3, 'Programmer II', 'Removal of Infusion Device from Chest Wall, External Approach', 'Yardi Enterprise', 2, '405.41', '2133.18', 12, 1, 2);

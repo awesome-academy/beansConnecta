@@ -29,6 +29,11 @@ public class Company {
 	@Type(type = "text")
 	private String description;
 
+	@Override
+	public String toString() {
+		return "Company [name=" + name + ", city=" + city + "]";
+	}
+
 	@Column(name = "address")
 	private String address;
 

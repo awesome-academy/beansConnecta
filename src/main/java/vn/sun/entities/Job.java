@@ -93,8 +93,8 @@ public class Job {
 
 	@Override
 	public String toString() {
-		return "Job [id=" + id + ", title=" + title + ", tag=" + tag + ", minPay=" + minPay + ", maxPay=" + maxPay
-				+ ", quantity=" + quantity + "]";
+		return "Job [id=" + id + ", title=" + title + ", tag=" + tag + ", quantity=" + quantity + ", company=" + company
+				+ ", jobType=" + jobType + "]";
 	}
 
 	public int getId() {
