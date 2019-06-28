@@ -2,15 +2,20 @@ package vn.sun.entities;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -76,7 +81,16 @@ public class Job {
 	@ManyToOne
 	@JoinColumn(name = "jobTypeId", nullable = false)
 	private JobType jobType;
-	
+
+	@ManyToMany(fetch = FetchType.LAZY, cascade = {
+			CascadeType.MERGE,
+			CascadeType.PERSIST,
+	})
+	@JoinTable(name = "applies",
+		joinColumns = @JoinColumn(name = "jobId", nullable = false, updatable = false),
+		inverseJoinColumns = @JoinColumn(name = "candidateId", nullable = false, updatable = false))
+	private List<Candidate> candidates;
+
 	@Override
 	public String toString() {
 		return "Job [id=" + id + ", title=" + title + ", tag=" + tag + ", minPay=" + minPay + ", maxPay=" + maxPay
@@ -185,6 +199,14 @@ public class Job {
 
 	public void setUpdateTime(Date updateTime) {
 		this.updateTime = updateTime;
+	}
+
+	public List<Candidate> getCandidates() {
+		return candidates;
+	}
+
+	public void setCandidates(List<Candidate> candidates) {
+		this.candidates = candidates;
 	}
 
 }
