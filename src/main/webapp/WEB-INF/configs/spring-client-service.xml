@@ -11,6 +11,14 @@
 			</bean>
 		</property>
 	</bean>
+	
+	<bean id="usersDetailsLoginService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="vn.sun.services.client.impl.UserDetailsLoginServiceImpl">
+				<property name="userDAO" ref="userDAO" />
+			</bean>
+		</property>
+	</bean>
 
 	<bean id="jobTypeService" parent="baseTransactionProxy">
 		<property name="target">

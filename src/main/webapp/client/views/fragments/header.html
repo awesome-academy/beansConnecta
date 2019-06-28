@@ -1,3 +1,4 @@
+<html xmlns:th="http://www.thymeleaf.org">
 <header th:fragment="header">
 	<!--Navigation bar-->
 	<nav
@@ -5,11 +6,12 @@
             ftco-navbar-light"
 		id="ftco-navbar">
 		<div class="container">
-			<a class="navbar-brand" href="index.html" th:text="#{client.index.homepageLabel}"></a>
+			<a class="navbar-brand" href="index.html"
+				th:text="#{client.index.homepageLabel}"></a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#ftco-nav" aria-controls="ftco-nav"
-				aria-expanded="false" aria-label="Toggle navigation" 
-				th:text="#{client.index.btnMenu}"> 
+				aria-expanded="false" aria-label="Toggle navigation"
+				th:text="#{client.index.btnMenu}">
 				<span class="oi oi-menu"></span>
 			</button>
 
@@ -17,7 +19,7 @@
 				<ul class="navbar-nav ml-auto">
 
 					<li class="nav-item active"><a href="index.html"
-						class="nav-link" th:text="#{client.index.navLinkHome}"></a></li> 
+						class="nav-link" th:text="#{client.index.navLinkHome}"></a></li>
 
 					<li class="nav-item"><a href="candidates.html"
 						class="nav-link" th:text="#{client.index.navLinkCandidate}"></a></li>
@@ -25,20 +27,34 @@
 					<li class="nav-item"><a href="companies/" 
 						class="nav-link" th:text="#{client.index.navLinkCompany}"></a></li>
 
-					<li class="nav-item"><a href="jobs.html" 
-						class="nav-link" th:text="#{client.index.navLinkJob}"></a></li>
+					<li class="nav-item"><a href="companies.html" class="nav-link"
+						th:text="#{client.index.navLinkCompany}"></a></li>
 
-					<li class="nav-item"><a href="about.html" 
-						class="nav-link" th:text="#{client.index.navLinkAbout}"></a></li> 
-						
+					<li class="nav-item"><a href="jobs.html" class="nav-link"
+						th:text="#{client.index.navLinkJob}"></a></li>
+
+					<li class="nav-item"><a href="about.html" class="nav-link"
+						th:text="#{client.index.navLinkAbout}"></a></li>
+
 					<li class="nav-item cta mr-md-1"><a href="register.html"
 						class="nav-link" th:text="#{client.index.navLinkSignup}"></a></li>
 
 					<li class="nav-item cta cta-colored"><a href="login.html"
 						class="nav-link" th:text="#{client.index.navLinkSignin}"></a></li>
+
+					<!-- Temporary login, username identicator, will be fixed later  -->
+					<li th:if="${currentUser != null}" class="nav-item cta cta-colored">
+						<form name="logoutForm" th:action="@{/security_logout}" method="post">
+							<input class="nav-link" type="submit" th:value="#{client.index.navLinkSignout}" />
+						</form>	
+					</li>
+					<li th:if="${currentUser != null}" class="nav-item cta cta-colored" th:text="${currentUser}"></li>
+					<li th:if="${(param.error != null) and (param.error[0] == 'true')}" th:text="${session.SPRING_SECURITY_LAST_EXCEPTION.message}"></li>
+					<!--  -->
 				</ul>
 			</div>
 		</div>
 	</nav>
 	<!-- END nav -->
 </header>
+</html>

@@ -1,0 +1,31 @@
+<beans:beans
+	xmlns="http://www.springframework.org/schema/security"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
+	<http use-expressions="true" auto-config="true">
+
+		<intercept-url pattern="/user/**"
+			access="hasRole('CANDIDATE')" />
+
+		<form-login login-page="/login"
+			login-processing-url="/security_login" default-target-url="/"
+			authentication-failure-url="/login?error=true"
+			authentication-success-handler-ref="myAuthenticationSuccessHandler"
+			username-parameter="email" password-parameter="password" />
+		<logout logout-url="/security_logout" invalidate-session="true"
+			logout-success-url="/" delete-cookies="JSESSIONID" />
+	</http>
+
+	<authentication-manager>
+		<authentication-provider
+			user-service-ref="usersDetailsLoginService">
+			<password-encoder ref="encoder" />
+		</authentication-provider>
+	</authentication-manager>
+	<beans:bean id="myAuthenticationSuccessHandler"
+		class="vn.sun.config.MyAuthenticationSuccessHandler" />
+	<beans:bean id="encoder"
+		class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />
+</beans:beans>

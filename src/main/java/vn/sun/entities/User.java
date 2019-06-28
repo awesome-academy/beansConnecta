@@ -1,6 +1,8 @@
 package vn.sun.entities;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -15,38 +17,41 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
+
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.Type;
 import org.hibernate.annotations.UpdateTimestamp;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 @Entity
 @Table(name="users")
 public class User {
 
 	@Id
-	@Column(name="id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
-	@Column(name="email")
+
+	@Column(name = "email")
 	private String email;
-	
-	@Column(name="phone")
+
+	@Column(name = "phone")
 	private String phone;
-	
-	@Column(name="password")
-	@Type(type="text")
+
+	@Column(name = "password")
+	@Type(type = "text")
 	private String password;
-	
+
 	public enum role {
-		COMPANY,
-		CANDIDATE
+		COMPANY, CANDIDATE
 	}
-	
+
 	@Column(columnDefinition = "enum('COMPANY','CANDIDATE')")
 	@Enumerated(EnumType.STRING)
 	private role role;
-	
+
 	@CreationTimestamp
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "createTime")
@@ -129,4 +134,11 @@ public class User {
 		this.candidate = candidate;
 	}	
 	
+	@Transient
+	public List<GrantedAuthority> getAuthorities() {
+		List<GrantedAuthority> authorities = new ArrayList<>();
+		authorities.add(new SimpleGrantedAuthority(this.role.name()));
+		return authorities;
+	}
+
 }

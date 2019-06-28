@@ -8,7 +8,7 @@ import vn.sun.services.client.UserServices;
 public class BaseController {
 
 	@Autowired
-	protected UserServices userServices;
+	protected UserServices userService;
 	@Autowired
 	protected MessageSource messageSource;
 }

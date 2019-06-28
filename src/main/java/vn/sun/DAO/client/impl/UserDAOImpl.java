@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.util.List;
 
 import org.apache.log4j.Logger;
-import org.hibernate.LockMode;
 import org.springframework.stereotype.Repository;
 
 import vn.sun.DAO.client.AbstractBaseDAO;
@@ -20,13 +19,13 @@ public class UserDAOImpl extends AbstractBaseDAO<Serializable, User> implements 
 	@Override
 	public List<User> loadEntities() {
 		logger.info("load users");
-		return getSession().createQuery("from Users").getResultList();
+		return getSession().createQuery("from User").getResultList();
 	}
 
 	@Override
 	public User findUserByEmail(String email) {
 		User user = (User) getSession()
-				.createQuery("from Users u where u.email = :email")
+				.createQuery("from User u where u.email = :email")
 				.setParameter("email", email)
 				.uniqueResult();
 		return user;
