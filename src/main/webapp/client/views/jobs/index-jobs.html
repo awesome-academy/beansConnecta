@@ -1,12 +1,12 @@
-<!DOCTYPE html>
+	<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
-	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-	layout:decorate="client/views/fragments/base-layout">
-	
-<title th:text="#{client.joblist.title}"></title>
-<div layout:fragment="content">
-  <div class="container">
-    <div class="job-search-box">
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="client/views/fragments/base-layout">
+
+  <title th:text="#{client.joblist.title}"></title>
+  <div layout:fragment="content">
+    <div class="container">
+      <div class="job-search-box">
         <div class="ftco-search">
           <div class="row">
             <div class="col-md-12 nav-link-wrap">
@@ -74,432 +74,204 @@
           </div>
         </div>
       </div>
-      </div>
-      
-        <section class="ftco-section bg-light">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-9 pr-lg-5">
-                <div class="row justify-content-center pb-3">
-                  <div class="col-md-12 heading-section ftco-animate">
-                    <span class="subheading">Recently Added Jobs</span>
-                    <h2 class="mb-4">Hot Jobs</h2>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-12 ftco-animate">
-                    <div class="job-post-item py-4 d-block d-lg-flex
-                      align-items-center">
-                      <div class="one-third mb-4 mb-md-0">
-                        <div class="job-post-item-header d-flex
-                          align-items-center">
-                          <h2 class="mr-3 text-black"><a href="#">Frontend
-                              Development</a></h2>
-                          <div class="badge-wrap">
-                            <span class="bg-primary text-white badge py-2 px-3">Partime</span>
-                          </div>
-                        </div>
-                        <div class="job-post-item-body d-block d-md-flex">
-                          <div class="mr-3"><span class="icon-layers"></span> <a
-                              href="#">Facebook, Inc.</a></div>
-                          <div><span class="icon-my_location"></span> <span>Western
-                              City, UK</span></div>
-                        </div>
-                      </div>
+    </div>
 
-                      <div class="one-forth ml-auto d-flex align-items-center mt-4
-                        md-md-0">
-                        <div>
-                          <a href="#" class="icon text-center d-flex
-                            justify-content-center align-items-center icon mr-2">
-                            <span class="icon-heart"></span>
-                          </a>
-                        </div>
-                        <a href="job-single.html" class="btn btn-primary py-2">Apply
-                          Job</a>
-                      </div>
-                    </div>
-                  </div><!-- end -->
-
-                  <div class="col-md-12 ftco-animate">
-                    <div class="job-post-item py-4 d-block d-lg-flex
-                      align-items-center">
-                      <div class="one-third mb-4 mb-md-0">
-                        <div class="job-post-item-header d-flex
-                          align-items-center">
-                          <h2 class="mr-3 text-black"><a href="#">Full Stack
-                              Developer</a></h2>
-                          <div class="badge-wrap">
-                            <span class="bg-warning text-white badge py-2 px-3">Fulltime</span>
-                          </div>
-                        </div>
-                        <div class="job-post-item-body d-block d-md-flex">
-                          <div class="mr-3"><span class="icon-layers"></span> <a
-                              href="#">Google, Inc.</a></div>
-                          <div><span class="icon-my_location"></span> <span>Western
-                              City, UK</span></div>
-                        </div>
-                      </div>
-
-                      <div class="one-forth ml-auto d-flex align-items-center mt-4
-                        md-md-0">
-                        <div>
-                          <a href="#" class="icon text-center d-flex
-                            justify-content-center align-items-center icon mr-2">
-                            <span class="icon-heart"></span>
-                          </a>
-                        </div>
-                        <a href="job-single.html" class="btn btn-primary py-2">Apply
-                          Job</a>
-                      </div>
-                    </div>
-                  </div><!-- end -->
-
-                  <div class="col-md-12 ftco-animate">
-                    <div class="job-post-item py-4 d-block d-lg-flex
-                      align-items-center">
-                      <div class="one-third mb-4 mb-md-0">
-                        <div class="job-post-item-header d-flex
-                          align-items-center">
-                          <h2 class="mr-3 text-black"><a href="#">Open Source
-                              Interactive Developer</a></h2>
-                          <div class="badge-wrap">
-                            <span class="bg-info text-white badge py-2 px-3">Freelance</span>
-                          </div>
-                        </div>
-                        <div class="job-post-item-body d-block d-md-flex">
-                          <div class="mr-3"><span class="icon-layers"></span> <a
-                              href="#">New York Times</a></div>
-                          <div><span class="icon-my_location"></span> <span>Western
-                              City, UK</span></div>
-                        </div>
-                      </div>
-
-                      <div class="one-forth ml-auto d-flex align-items-center mt-4
-                        md-md-0">
-                        <div>
-                          <a href="#" class="icon text-center d-flex
-                            justify-content-center align-items-center icon mr-2">
-                            <span class="icon-heart"></span>
-                          </a>
-                        </div>
-                        <a href="job-single.html" class="btn btn-primary py-2">Apply
-                          Job</a>
-                      </div>
-                    </div>
-                  </div><!-- end -->
-
-                  <div class="col-md-12 ftco-animate">
-                    <div class="job-post-item py-4 d-block d-lg-flex
-                      align-items-center">
-                      <div class="one-third mb-4 mb-md-0">
-                        <div class="job-post-item-header d-flex
-                          align-items-center">
-                          <h2 class="mr-3 text-black"><a href="#">Frontend
-                              Development</a></h2>
-                          <div class="badge-wrap">
-                            <span class="bg-secondary text-white badge py-2 px-3">Internship</span>
-                          </div>
-                        </div>
-                        <div class="job-post-item-body d-block d-md-flex">
-                          <div class="mr-3"><span class="icon-layers"></span> <a
-                              href="#">Facebook, Inc.</a></div>
-                          <div><span class="icon-my_location"></span> <span>Western
-                              City, UK</span></div>
-                        </div>
-                      </div>
-
-                      <div class="one-forth ml-auto d-flex align-items-center mt-4
-                        md-md-0">
-                        <div>
-                          <a href="#" class="icon text-center d-flex
-                            justify-content-center align-items-center icon mr-2">
-                            <span class="icon-heart"></span>
-                          </a>
-                        </div>
-                        <a href="job-single.html" class="btn btn-primary py-2">Apply
-                          Job</a>
-                      </div>
-                    </div>
-                  </div><!-- end -->
-
-                  <div class="col-md-12 ftco-animate">
-                    <div class="job-post-item py-4 d-block d-lg-flex
-                      align-items-center">
-                      <div class="one-third mb-4 mb-md-0">
-                        <div class="job-post-item-header d-flex
-                          align-items-center">
-                          <h2 class="mr-3 text-black"><a href="#">Open Source
-                              Interactive Developer</a></h2>
-                          <div class="badge-wrap">
-                            <span class="bg-danger text-white badge py-2 px-3">Temporary</span>
-                          </div>
-                        </div>
-                        <div class="job-post-item-body d-block d-md-flex">
-                          <div class="mr-3"><span class="icon-layers"></span> <a
-                              href="#">New York Times</a></div>
-                          <div><span class="icon-my_location"></span> <span>Western
-                              City, UK</span></div>
-                        </div>
-                      </div>
-
-                      <div class="one-forth ml-auto d-flex align-items-center mt-4
-                        md-md-0">
-                        <div>
-                          <a href="#" class="icon text-center d-flex
-                            justify-content-center align-items-center icon mr-2">
-                            <span class="icon-heart"></span>
-                          </a>
-                        </div>
-                        <a href="job-single.html" class="btn btn-primary py-2">Apply
-                          Job</a>
-                      </div>
-                    </div>
-                  </div><!-- end -->
-
-                  <div class="col-md-12 ftco-animate">
-                    <div class="job-post-item py-4 d-block d-lg-flex
-                      align-items-center">
-                      <div class="one-third mb-4 mb-md-0">
-                        <div class="job-post-item-header d-flex
-                          align-items-center">
-                          <h2 class="mr-3 text-black"><a href="#">Full Stack
-                              Developer</a></h2>
-                          <div class="badge-wrap">
-                            <span class="bg-warning text-white badge py-2 px-3">Fulltime</span>
-                          </div>
-                        </div>
-                        <div class="job-post-item-body d-block d-md-flex">
-                          <div class="mr-3"><span class="icon-layers"></span> <a
-                              href="#">Google, Inc.</a></div>
-                          <div><span class="icon-my_location"></span> <span>Western
-                              City, UK</span></div>
-                        </div>
-                      </div>
-
-                      <div class="one-forth ml-auto d-flex align-items-center mt-4
-                        md-md-0">
-                        <div>
-                          <a href="#" class="icon text-center d-flex
-                            justify-content-center align-items-center icon mr-2">
-                            <span class="icon-heart"></span>
-                          </a>
-                        </div>
-                        <a href="job-single.html" class="btn btn-primary py-2">Apply
-                          Job</a>
-                      </div>
-                    </div>
-                  </div><!-- end -->
-
-                  <div class="col-md-12 ftco-animate">
-                    <div class="job-post-item py-4 d-block d-lg-flex
-                      align-items-center">
-                      <div class="one-third mb-4 mb-md-0">
-                        <div class="job-post-item-header d-flex
-                          align-items-center">
-                          <h2 class="mr-3 text-black"><a href="#">Open Source
-                              Interactive Developer</a></h2>
-                          <div class="badge-wrap">
-                            <span class="bg-info text-white badge py-2 px-3">Freelance</span>
-                          </div>
-                        </div>
-                        <div class="job-post-item-body d-block d-md-flex">
-                          <div class="mr-3"><span class="icon-layers"></span> <a
-                              href="#">New York Times</a></div>
-                          <div><span class="icon-my_location"></span> <span>Western
-                              City, UK</span></div>
-                        </div>
-                      </div>
-
-                      <div class="one-forth ml-auto d-flex align-items-center mt-4
-                        md-md-0">
-                        <div>
-                          <a href="#" class="icon text-center d-flex
-                            justify-content-center align-items-center icon mr-2">
-                            <span class="icon-heart"></span>
-                          </a>
-                        </div>
-                        <a href="job-single.html" class="btn btn-primary py-2">Apply
-                          Job</a>
-                      </div>
-                    </div>
-                  </div><!-- end -->
-
-                  <div class="col-md-12 ftco-animate">
-                    <div class="job-post-item py-4 d-block d-lg-flex
-                      align-items-center">
-                      <div class="one-third mb-4 mb-md-0">
-                        <div class="job-post-item-header d-flex
-                          align-items-center">
-                          <h2 class="mr-3 text-black"><a href="#">Frontend
-                              Development</a></h2>
-                          <div class="badge-wrap">
-                            <span class="bg-secondary text-white badge py-2 px-3">Internship</span>
-                          </div>
-                        </div>
-                        <div class="job-post-item-body d-block d-md-flex">
-                          <div class="mr-3"><span class="icon-layers"></span> <a
-                              href="#">Facebook, Inc.</a></div>
-                          <div><span class="icon-my_location"></span> <span>Western
-                              City, UK</span></div>
-                        </div>
-                      </div>
-
-                      <div class="one-forth ml-auto d-flex align-items-center mt-4
-                        md-md-0">
-                        <div>
-                          <a href="#" class="icon text-center d-flex
-                            justify-content-center align-items-center icon mr-2">
-                            <span class="icon-heart"></span>
-                          </a>
-                        </div>
-                        <a href="job-single.html" class="btn btn-primary py-2">Apply
-                          Job</a>
-                      </div>
-                    </div>
-                  </div><!-- end -->
-
-                  <div class="col-md-12 ftco-animate">
-                    <div class="job-post-item py-4 d-block d-lg-flex
-                      align-items-center">
-                      <div class="one-third mb-4 mb-md-0">
-                        <div class="job-post-item-header d-flex
-                          align-items-center">
-                          <h2 class="mr-3 text-black"><a href="#">Open Source
-                              Interactive Developer</a></h2>
-                          <div class="badge-wrap">
-                            <span class="bg-danger text-white badge py-2 px-3">Temporary</span>
-                          </div>
-                        </div>
-                        <div class="job-post-item-body d-block d-md-flex">
-                          <div class="mr-3"><span class="icon-layers"></span> <a
-                              href="#">New York Times</a></div>
-                          <div><span class="icon-my_location"></span> <span>Western
-                              City, UK</span></div>
-                        </div>
-                      </div>
-
-                      <div class="one-forth ml-auto d-flex align-items-center mt-4
-                        md-md-0">
-                        <div>
-                          <a href="#" class="icon text-center d-flex
-                            justify-content-center align-items-center icon mr-2">
-                            <span class="icon-heart"></span>
-                          </a>
-                        </div>
-                        <a href="job-single.html" class="btn btn-primary py-2">Apply
-                          Job</a>
-                      </div>
-                    </div>
-                  </div><!-- end -->
-                </div>
+    <section class="ftco-section bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-9 pr-lg-5">
+            <div class="row justify-content-center pb-3">
+              <div class="col-md-12 heading-section ftco-animate">
+                <span class="subheading">All Job Cause Im Running Out of Idea</span>
+                <h2 class="mb-4">All Job</h2>
               </div>
-              <div class="col-lg-3 sidebar">
-                <div class="row justify-content-center pb-3">
-                  <div class="col-md-12 heading-section ftco-animate">
-                    <span class="subheading">Recruitment agencies</span>
-                    <h2 class="mb-4">Top Recruitments</h2>
-                  </div>
-                </div>
-                <div class="sidebar-box ftco-animate">
-                  <div class="border">
-                    <a href="#" class="company-wrap"><img
-                        src="images/company-1.jpg"
-                        class="img-fluid" alt="Colorlib Free Template"></a>
-                    <div class="text p-3">
-                      <h3><a href="#">Google Company</a></h3>
-                      <p><span class="number">500</span> <span>Open position</span></p>
+            </div>
+            <div class="row">
+
+              <th:block th:each="job : ${jobs.pageList}">
+                <div class="col-md-12 ftco-animate">
+                  <div class="job-post-item py-4 d-block d-lg-flex
+                    align-items-center">
+                    <div class="one-third mb-4 mb-md-0">
+                      <div class="job-post-item-header d-flex
+                        align-items-center">
+                        <h2 class="mr-3 text-black"><a href="#"
+                            th:text="${job.title}"></a></h2>
+                        <div class="badge-wrap">
+                          <span class="bg-primary text-white badge py-2 px-3"
+                            th:text="${job.tag}"></span>
+                        </div>
+                      </div>
+                      <div class="job-post-item-body d-block d-md-flex">
+                        <div class="mr-3"><span class="icon-layers"></span> <a
+                            href="#" th:text="${job.company.name}"></a></div>
+                        <div><span class="icon-my_location"></span> <span
+                            th:text="${job.company.city}"></span></div>
+                      </div>
+                    </div>
+
+                    <div class="one-forth ml-auto d-flex align-items-center mt-4
+                      md-md-0">
+                      <div>
+                        <a href="#" class="icon text-center d-flex
+                          justify-content-center align-items-center icon mr-2">
+                          <span class="icon-heart"></span>
+                        </a>
+                      </div>
+                      <a href="job-single.html" class="btn btn-primary py-2">Apply
+                        Job</a>
                     </div>
                   </div>
-                </div>
-                <div class="sidebar-box ftco-animate">
-                  <div class="border">
-                    <a href="#" class="company-wrap"><img
-                        src="images/company-2.jpg"
-                        class="img-fluid" alt="Colorlib Free Template"></a>
-                    <div class="text p-3">
-                      <h3><a href="#">Facebook Company</a></h3>
-                      <p><span class="number">700</span> <span>Open position</span></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="sidebar-box ftco-animate">
-                  <div class="border">
-                    <a href="#" class="company-wrap"><img
-                        src="images/company-3.jpg"
-                        class="img-fluid" alt="Colorlib Free Template"></a>
-                    <div class="text p-3">
-                      <h3><a href="#">IT Programming INC</a></h3>
-                      <p><span class="number">700</span> <span>Open position</span></p>
+                </div><!-- end -->
+              </th:block>
+
+              <!-- paginate nav -->
+              <div class="row mt-5">
+                <div class="col text-center">
+                  <div class="block-27">
+                    <ul>
+                    	<li>
+                        <a th:if="${!jobs.firstPage}"
+                          th:href="@{/jobs/(page=0)}">&lt;&lt;
+                        </a>
+                      </li>
+                      <li>
+                        <a th:if="${!jobs.firstPage}"
+                          th:href="@{/jobs/(page=${jobs.page-1})}">&lt;
+                        </a>
+                      </li>
+                      <li>
+                        <a th:if="${0 <= jobs.page-2}"
+                          th:href="@{/jobs/(page=${jobs.page-2})}"
+                          th:text="${jobs.page - 2}">
+                        </a>
+                      </li>
+                      <li>
+                        <a th:if="${!jobs.firstPage}"
+                          th:href="@{/jobs/(page=${jobs.page-1})}"
+                          th:text="${jobs.page - 1}">
+                        </a>
+                      </li>
+                      <li class="active"><a
+                          th:text="${jobs.page}"></a>
+                      </li>
+                      <li>
+                        <a th:if="${!jobs.lastPage}"
+                          th:href="@{/jobs/(page=${jobs.page+1})}"
+                          th:text="${jobs.page + 1}">
+                        </a>
+                      </li>
+                      <li>
+                        <a th:if="${jobs.getPageCount() >= jobs.page+2}"
+                          th:href="@{/jobs/(page=${jobs.page+2})}"
+                          th:text="${jobs.page + 2}">
+                        </a>
+                      </li>
+                      <li>
+                        <a th:if="${!jobs.lastPage}"
+                          th:href="@{/jobs/(page=${jobs.page+1})}">&gt;
+                        </a>
+                      </li>
+					  <li>
+                        <a th:if="${jobs.getPageCount() != jobs.page}"
+                          th:href="@{/jobs/(page=${jobs.getPageCount()})}">&gt;&gt;
+                        </a>
+                      </li>
+                      </ul>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
+            <div class="col-lg-3 sidebar">
+              <div class="row justify-content-center pb-3">
+                <div class="col-md-12 heading-section ftco-animate">
+                  <span class="subheading"
+                    th:text="#{client.company.topCompany}"></span>
+                  <h2 class="mb-4" th:text="#{client.company.topRecruit}"></h2>
+                </div>
+              </div>
 
-        <section class="ftco-section">
-          <div class="container">
-            <div class="row justify-content-center mb-5 pb-3">
-              <div class="col-md-7 heading-section text-center ftco-animate">
-                <span class="subheading">Job Categories</span>
-                <h2 class="mb-4">Top Categories</h2>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-3 ftco-animate">
-                <ul class="category">
-                  <li><a href="#">Web Development <br><span class="number">354</span>
-                      <span>Open position</span><i class="ion-ios-arrow-forward"></i></a></li>
-                  <li><a href="#">Graphic Designer <br><span class="number">143</span>
-                      <span>Open position</span><i class="ion-ios-arrow-forward"></i></a></li>
-                  <li><a href="#">Multimedia <br><span class="number">100</span>
-                      <span>Open position</span><i class="ion-ios-arrow-forward"></i></a></li>
-                  <li><a href="#">Advertising <br><span class="number">90</span>
-                      <span>Open position</span><i class="ion-ios-arrow-forward"></i></a></li>
-                </ul>
-              </div>
-              <div class="col-md-3 ftco-animate">
-                <ul class="category">
-                  <li><a href="#">Education &amp; Training <br><span
-                        class="number">100</span> <span>Open position</span><i
-                        class="ion-ios-arrow-forward"></i></a></li>
-                  <li><a href="#">English <br><span class="number">200</span>
-                      <span>Open position</span><i class="ion-ios-arrow-forward"></i></a></li>
-                  <li><a href="#">Social Media <br><span class="number">300</span>
-                      <span>Open position</span><i class="ion-ios-arrow-forward"></i></a></li>
-                  <li><a href="#">Writing <br><span class="number">150</span>
-                      <span>Open position</span><i class="ion-ios-arrow-forward"></i></a></li>
-                </ul>
-              </div>
-              <div class="col-md-3 ftco-animate">
-                <ul class="category">
-                  <li><a href="#">PHP Programming <br><span class="number">400</span>
-                      <span>Open position</span><i class="ion-ios-arrow-forward"></i></a></li>
-                  <li><a href="#">Project Management <br><span class="number">100</span>
-                      <span>Open position</span><i class="ion-ios-arrow-forward"></i></a></li>
-                  <li><a href="#">Finance Management <br><span class="number">222</span>
-                      <span>Open position</span><i class="ion-ios-arrow-forward"></i></a></li>
-                  <li><a href="#">Office &amp; Admin <br><span class="number">123</span>
-                      <span>Open position</span><i class="ion-ios-arrow-forward"></i></a></li>
-                </ul>
-              </div>
-              <div class="col-md-3 ftco-animate">
-                <ul class="category">
-                  <li><a href="#">Web Designer <br><span class="number">324</span>
-                      <span>Open position</span></span><i
-                      class="ion-ios-arrow-forward"></i></a></li>
-                <li><a href="#">Customer Service <br><span class="number">564</span>
-                    <span>Open position</span><i class="ion-ios-arrow-forward"></i></a></li>
-                <li><a href="#">Marketing &amp; Sales <br><span class="number">234</span>
-                    <span>Open position</span><i class="ion-ios-arrow-forward"></i></a></li>
-                <li><a href="#">Software Development <br><span class="number">425</span>
-                    <span>Open position</span><i class="ion-ios-arrow-forward"></i></a></li>
-              </ul>
+              <th:block th:each="company : ${topActiveCompanies}">
+                <div class="sidebar-box ftco-animate">
+                  <div class="border">
+                    <a href="#" class="company-wrap"><img
+                        th:src="@{/client/assets/images/active-company.jpg}"
+                        class="img-fluid" alt="Cong ty cua An"></a>
+                    <div class="text p-3">
+                      <h3><a href="#" th:text="${company.key}"></a></h3>
+                      <p><span class="number" th:text="${company.value}"></span>
+                        <span th:text="#{client.company.position}"></span></p>
+                    </div>
+                  </div>
+                </div>
+              </th:block>
             </div>
           </div>
         </div>
       </section>
+
+      <section class="ftco-section">
+        <div class="container">
+          <div class="row justify-content-center mb-5 pb-3">
+            <div class="col-md-7 heading-section text-center ftco-animate">
+              <span class="subheading">Job Categories</span>
+              <h2 class="mb-4">Top Categories</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3 ftco-animate">
+              <ul class="category">
+                <li><a href="#">Web Development <br><span class="number">354</span>
+                    <span>Open position</span><i class="ion-ios-arrow-forward"></i></a></li>
+                <li><a href="#">Graphic Designer <br><span class="number">143</span>
+                    <span>Open position</span><i class="ion-ios-arrow-forward"></i></a></li>
+                <li><a href="#">Multimedia <br><span class="number">100</span>
+                    <span>Open position</span><i class="ion-ios-arrow-forward"></i></a></li>
+                <li><a href="#">Advertising <br><span class="number">90</span>
+                    <span>Open position</span><i class="ion-ios-arrow-forward"></i></a></li>
+              </ul>
+            </div>
+            <div class="col-md-3 ftco-animate">
+              <ul class="category">
+                <li><a href="#">Education &amp; Training <br><span
+                      class="number">100</span> <span>Open position</span><i
+                      class="ion-ios-arrow-forward"></i></a></li>
+                <li><a href="#">English <br><span class="number">200</span>
+                    <span>Open position</span><i class="ion-ios-arrow-forward"></i></a></li>
+                <li><a href="#">Social Media <br><span class="number">300</span>
+                    <span>Open position</span><i class="ion-ios-arrow-forward"></i></a></li>
+                <li><a href="#">Writing <br><span class="number">150</span>
+                    <span>Open position</span><i class="ion-ios-arrow-forward"></i></a></li>
+              </ul>
+            </div>
+            <div class="col-md-3 ftco-animate">
+              <ul class="category">
+                <li><a href="#">PHP Programming <br><span class="number">400</span>
+                    <span>Open position</span><i class="ion-ios-arrow-forward"></i></a></li>
+                <li><a href="#">Project Management <br><span class="number">100</span>
+                    <span>Open position</span><i class="ion-ios-arrow-forward"></i></a></li>
+                <li><a href="#">Finance Management <br><span class="number">222</span>
+                    <span>Open position</span><i class="ion-ios-arrow-forward"></i></a></li>
+                <li><a href="#">Office &amp; Admin <br><span class="number">123</span>
+                    <span>Open position</span><i class="ion-ios-arrow-forward"></i></a></li>
+              </ul>
+            </div>
+            <div class="col-md-3 ftco-animate">
+              <ul class="category">
+                <li><a href="#">Web Designer <br><span class="number">324</span>
+                    <span>Open position</span></span><i
+                    class="ion-ios-arrow-forward"></i></a></li>
+              <li><a href="#">Customer Service <br><span class="number">564</span>
+                  <span>Open position</span><i class="ion-ios-arrow-forward"></i></a></li>
+              <li><a href="#">Marketing &amp; Sales <br><span class="number">234</span>
+                  <span>Open position</span><i class="ion-ios-arrow-forward"></i></a></li>
+              <li><a href="#">Software Development <br><span class="number">425</span>
+                  <span>Open position</span><i class="ion-ios-arrow-forward"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </html>

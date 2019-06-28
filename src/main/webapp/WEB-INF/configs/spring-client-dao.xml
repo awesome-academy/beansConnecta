@@ -17,8 +17,14 @@
 		class="vn.sun.DAO.client.impl.CompanyDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	
-	<bean id="candidateDAO" class="vn.sun.DAO.client.impl.CandidateDAOImpl">
+
+	<bean id="candidateDAO"
+		class="vn.sun.DAO.client.impl.CandidateDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="jobDAO"
+		class="vn.sun.DAO.client.impl.JobDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 </beans>

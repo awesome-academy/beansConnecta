@@ -2,6 +2,7 @@ package vn.sun.services.client.impl;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -74,6 +75,16 @@ public class CompanyServicesImpl implements CompanyServices {
 			return CompanyDAO.loadCompanyJobs(key);
 		} catch (Exception e) {
 			logger.error("has error by loadCompanyJobs method");
+			return null;
+		}
+	}
+
+	@Override
+	public Map<String,String> loadTopActive() {
+		try {
+			return CompanyDAO.loadTopActive();
+		} catch (Exception e) {
+			logger.error("has error by loadTopActive method" + e);
 			return null;
 		}
 	}
