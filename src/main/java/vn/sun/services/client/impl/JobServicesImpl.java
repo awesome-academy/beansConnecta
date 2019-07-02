@@ -22,9 +22,9 @@ public class JobServicesImpl implements JobServices {
 	}
 
 	@Override
-	public List<Job> loadJobs() {
+	public List<Job> loadJobs(int firstResult, int lastResult) {
 		try {
-			return JobDAO.loadEntities();
+			return JobDAO.query(firstResult, lastResult);
 		} catch (Exception e) {
 			logger.error("has error by loadJob method");
 			return null;
@@ -63,6 +63,15 @@ public class JobServicesImpl implements JobServices {
 		} catch (DataIntegrityViolationException e) {
 			logger.error("Cant delete this job types");
 			throw e;
+		}
+	}
+
+	@Override
+	public Long countAll() {
+		try {
+			return JobDAO.countAll();
+		} catch (Exception e) {
+			return null;
 		}
 	}
 

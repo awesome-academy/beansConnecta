@@ -36,13 +36,8 @@
                             <div class="select-wrap">
                               <div class="icon"><span
                                   class="ion-ios-arrow-down"></span></div>
-                              <select name="" id="" class="form-control">
-                                <option value="">Category</option>
-                                <option value="">Full Time</option>
-                                <option value="">Part Time</option>
-                                <option value="">Freelance</option>
-                                <option value="">Internship</option>
-                                <option value="">Temporary</option>
+                              <select id ="jobType" name="jobType" class="form-control">
+                              <option th:each="jobType : ${jobTypes}" th:value="${jobType.id}" th:text="${jobType.name}"></option>
                               </select>
                             </div>
                           </div>
@@ -88,7 +83,7 @@
             </div>
             <div class="row">
 
-              <th:block th:each="job : ${jobs.pageList}">
+              <th:block th:each="job : ${jobs}">
                 <div class="col-md-12 ftco-animate">
                   <div class="job-post-item py-4 d-block d-lg-flex
                     align-items-center">
@@ -131,50 +126,40 @@
                   <div class="block-27">
                     <ul>
                     	<li>
-                        <a th:if="${!jobs.firstPage}"
+                        <a
                           th:href="@{/jobs/(page=0)}">&lt;&lt;
                         </a>
                       </li>
-                      <li>
-                        <a th:if="${!jobs.firstPage}"
-                          th:href="@{/jobs/(page=${jobs.page-1})}">&lt;
+                       <li>
+                        <a th:if="${page > 1}"
+                          th:href="@{/jobs/(page=${page-2})}"
+                          th:text="${page-2}">
                         </a>
                       </li>
                       <li>
-                        <a th:if="${0 <= jobs.page-2}"
-                          th:href="@{/jobs/(page=${jobs.page-2})}"
-                          th:text="${jobs.page - 2}">
-                        </a>
-                      </li>
-                      <li>
-                        <a th:if="${!jobs.firstPage}"
-                          th:href="@{/jobs/(page=${jobs.page-1})}"
-                          th:text="${jobs.page - 1}">
+                        <a th:if="${page > 0}"
+                          th:href="@{/jobs/(page=${page-1})}"
+                          th:text="${page-1}">
                         </a>
                       </li>
                       <li class="active"><a
-                          th:text="${jobs.page}"></a>
+                          th:text="${page}"></a>
                       </li>
                       <li>
-                        <a th:if="${!jobs.lastPage}"
-                          th:href="@{/jobs/(page=${jobs.page+1})}"
-                          th:text="${jobs.page + 1}">
+                        <a th:if="${page < lastPage}"
+                          th:href="@{/jobs/(page=${page+1})}"
+                          th:text="${page+1}">
                         </a>
                       </li>
                       <li>
-                        <a th:if="${jobs.getPageCount() >= jobs.page+2}"
-                          th:href="@{/jobs/(page=${jobs.page+2})}"
-                          th:text="${jobs.page + 2}">
-                        </a>
-                      </li>
-                      <li>
-                        <a th:if="${!jobs.lastPage}"
-                          th:href="@{/jobs/(page=${jobs.page+1})}">&gt;
+                        <a th:if="${page+1 < lastPage}"
+                          th:href="@{/jobs/(page=${page+2})}"
+                          th:text="${page+2}">
                         </a>
                       </li>
 					  <li>
-                        <a th:if="${jobs.getPageCount() != jobs.page}"
-                          th:href="@{/jobs/(page=${jobs.getPageCount()})}">&gt;&gt;
+                        <a
+                          th:href="@{/jobs/(page=${lastPage})}">&gt;&gt;
                         </a>
                       </li>
                       </ul>

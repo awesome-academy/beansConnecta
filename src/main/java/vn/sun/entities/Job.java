@@ -26,9 +26,11 @@ import javax.validation.constraints.Positive;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+import org.springframework.stereotype.Indexed;
 
 @Entity
 @Table(name = "jobs")
+@Indexed
 public class Job {
 	@Id
 	@Column(name = "id")
