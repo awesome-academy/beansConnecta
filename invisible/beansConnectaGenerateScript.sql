@@ -87,7 +87,7 @@ CREATE TABLE IF NOT EXISTS `beansconnecta`.`users` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `email` VARCHAR(255) NOT NULL,
   `phone` VARCHAR(15) NULL,
-  `passwordHash` TEXT NOT NULL,
+  `password` TEXT NULL,
   `role` ENUM('COMPANY', 'CANDIDATE') NOT NULL DEFAULT 'CANDIDATE',
   `companyId` INT NULL,
   `createTime` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,

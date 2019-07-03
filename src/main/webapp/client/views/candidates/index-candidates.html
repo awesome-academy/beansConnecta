@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="client/views/fragments/base-layout">
+
+  <title th:text="#{client.companies.title}"></title>
+  <div layout:fragment="content">
+    <div class="container">
+      <div class="job-search-box">
+        <div class="ftco-search">
+          <div class="row">
+            <div class="col-md-12 nav-link-wrap">
+              <div class="nav nav-pills text-center"
+                id="v-pills-tab"
+                role="tablist" aria-orientation="vertical">
+              </div>
+            </div>
+            <div class="col-md-12 tab-wrap">
+              <div class="tab-content p-4"
+                id="v-pills-tabContent">
+                <div class="tab-pane fade show active"
+                  id="v-pills-1"
+                  role="tabpanel"
+                  aria-labelledby="v-pills-nextgen-tab">
+                  <form action="#" class="search-job">
+                    <div class="row no-gutters">
+                      <div class="col-md mr-md-2">
+                        <div class="form-group">
+                          <div class="form-field">
+                            <div class="icon"><span
+                                class="icon-briefcase"></span></div>
+                            <input type="text" class="form-control"
+                              placeholder="eg. Garphic. Web Developer">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md mr-md-2">
+                        <div class="form-group">
+                          <div class="form-field">
+                            <div
+                              class="select-wrap">
+                              <div class="icon"><span
+                                  class="ion-ios-arrow-down"></span></div>
+                              <select name=""
+                                id=""
+                                class="form-control">
+                                <option value="">Category</option>
+                                <option value="">Full Time</option>
+                                <option value="">PartTime</option>
+                                <option value="">Freelance</option>
+                                <option value="">Internship</option>
+                                <option value="">Temporary</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md mr-md-2">
+                        <div class="form-group">
+                          <div class="form-field">
+                            <div class="icon"><span
+                                class="icon-map-marker"></span></div>
+                            <input type="text"
+                              class="form-control"
+                              placeholder="Location">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md">
+                        <div class="form-group">
+                          <div class="form-field">
+                            <button type="submit"
+                              class="form-control btn btn-secondary">Search</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section
+      class="ftco-section ftco-candidates ftco-candidates-2 bg-light">
+      <div class="container">
+        <div class="row">
+
+          <th:block th:each="candidate : ${candidates.pageList}">
+            <div class="col-md-6">
+              <div class="team d-md-flex">
+
+                <div class="img">
+                  <img
+                    th:src="@{/client/assets/images/company-default.png}"
+                    />
+                </div>
+                <div class="text pl-md-4">
+                  <span th:text="${candidate.name}"
+                    class="location mb-0"></span>
+                  <h2 th:text="${candidate.phone}"></h2>
+                  <span th:text="${candidate.dob}"
+                    class="position"></span>
+                  <p th:text="${candidate.description}"></p>
+                  <span th:text="${company.address}"
+                    class="seen"></span>
+                  <p>
+                    <a href="#" class="btn btn-primary"
+                      th:text="#{client.companies.explore}"></a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </th:block>
+        <div class="row mt-5">
+          <div class="col text-center">
+            <div class="block-27">
+              <ul>
+                <li>
+                  <a th:if="${!candidates.firstPage}"
+                    th:href="@{/candidates/(page=${candidates.page-1})}">&lt;
+                  </a>
+                </li>
+                <li>
+                  <a th:if="${!candidates.firstPage}"
+                    th:href="@{/candidates/(page=${candidates.page-1})}"
+                    th:text="${candidates.page - 1}">
+                  </a>
+                </li>
+                <li class="active"><a
+                    th:text="${candidates.page}"> </a>
+                </li>
+                <li>
+                  <a th:if="${!candidates.lastPage}"
+                    th:href="@{/candidates/(page=${candidates.page+1})}"
+                    th:text="${candidates.page + 1}">
+                  </a>
+                </li>
+                <li>
+                  <a th:if="${!candidates.lastPage}"
+                    th:href="@{/candidates/(page=${candidates.page+1})}">&gt;
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</html>

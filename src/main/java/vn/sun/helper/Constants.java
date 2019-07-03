@@ -6,4 +6,6 @@ public final class Constants {
 
 	public static int JOB_PAGESIZE = 10;
 	public static int COMPANY_PAGESIZE = 6;
+	public static int CANDIDATE_PAGESIZE = 5;
+	
 }
