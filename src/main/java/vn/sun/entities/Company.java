@@ -1,5 +1,6 @@
 package vn.sun.entities;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -45,6 +46,9 @@ public class Company {
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "company")
 	private List<Job> jobs = new LinkedList<Job>();
+	
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "company")
+	private List<User> users = new ArrayList<User>();
 
 	public int getId() {
 		return id;
@@ -100,6 +104,22 @@ public class Company {
 
 	public void setJobs(List<Job> jobs) {
 		this.jobs = jobs;
+	}
+
+	public List<User> getUsers() {
+		return users;
+	}
+
+	public void setUsers(List<User> users) {
+		this.users = users;
+	}
+	
+	public boolean addUser(User user) {
+		if(user != null && users.contains(user)) {
+			return false;
+		}
+		users.add(user);
+		return true;
 	}
 
 }
