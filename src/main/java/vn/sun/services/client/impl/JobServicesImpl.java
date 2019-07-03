@@ -22,9 +22,9 @@ public class JobServicesImpl implements JobServices {
 	}
 
 	@Override
-	public List<Job> loadJobs(int firstResult, int lastResult) {
+	public List<Job> loadJobs(int firstResult, int maxResult) {
 		try {
-			return JobDAO.query(firstResult, lastResult);
+			return JobDAO.loadJobs(firstResult, maxResult);
 		} catch (Exception e) {
 			logger.error("has error by loadJob method");
 			return null;
@@ -67,10 +67,23 @@ public class JobServicesImpl implements JobServices {
 	}
 
 	@Override
-	public Long countAll() {
+	public Long countJobs(String keyword) {
 		try {
-			return JobDAO.countAll();
+			return JobDAO.countJobs(keyword);
 		} catch (Exception e) {
+			return null;
+		}
+	}
+
+	@Override
+	public List<Job> search(String keyword, int firstResult, int maxResult) {
+		try {
+			if (keyword == "" || keyword == null) {
+				return JobDAO.loadJobs(firstResult, maxResult);
+			}
+			return JobDAO.search(keyword, firstResult, maxResult);
+		} catch (Exception e) {
+			logger.error("Error on full text search: " + e);
 			return null;
 		}
 	}

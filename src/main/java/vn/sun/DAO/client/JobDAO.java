@@ -7,7 +7,9 @@ import vn.sun.entities.Job;
 public interface JobDAO extends BaseDAO<Integer, Job> {
 	List<Job> loadEntities();
 
-	List<Job> query(int firstResult, int lastResult);
+	List<Job> loadJobs(int firstResult, int maxResult);
 	
-	Long countAll();
+	Long countJobs(String keyword);
+	
+	List<Job> search(String keyword,int firstResult, int maxResult);
 }
