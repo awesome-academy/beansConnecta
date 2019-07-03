@@ -87,7 +87,7 @@ CREATE TABLE IF NOT EXISTS `beansconnecta`.`users` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `email` VARCHAR(255) NOT NULL,
   `phone` VARCHAR(15) NULL,
-  `password` TEXT NULL,
+  `password` TEXT NOT NULL,
   `role` ENUM('COMPANY', 'CANDIDATE') NOT NULL DEFAULT 'CANDIDATE',
   `companyId` INT NULL,
   `createTime` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
@@ -114,7 +114,7 @@ DROP TABLE IF EXISTS `beansconnecta`.`candidates` ;
 CREATE TABLE IF NOT EXISTS `beansconnecta`.`candidates` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(255) NOT NULL,
-  `dob` DATE NOT NULL,
+  `dob` DATE,
   `gender` TINYINT NOT NULL DEFAULT 1,
   `image` BLOB NULL,
   `city` VARCHAR(45) NULL,
