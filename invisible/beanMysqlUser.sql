@@ -1,2 +1,2 @@
-CREATE USER 'bean'@'localhost' IDENTIFIED BY 'muaxuan';
-GRANT ALL PRIVILEGES ON *.* TO 'bean'@'localhost';
+CREATE USER 'spring'@'localhost' IDENTIFIED BY 'muaxuan';
+GRANT ALL PRIVILEGES ON *.* TO 'spring'@'localhost';
