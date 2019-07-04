@@ -26,7 +26,11 @@ import javax.validation.constraints.Positive;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
-import org.springframework.stereotype.Indexed;
+import org.hibernate.search.annotations.Analyze;
+import org.hibernate.search.annotations.Field;
+import org.hibernate.search.annotations.Index;
+import org.hibernate.search.annotations.Indexed;
+import org.hibernate.search.annotations.Store;
 
 @Entity
 @Table(name = "jobs")
@@ -38,10 +42,13 @@ public class Job {
 	private int id;
 
 	@NotNull(message = "{validateJob.title.notNull}")
+	@Field(index=Index.YES, analyze=Analyze.YES, store=Store.NO)
 	private String title;
 	@NotNull(message = "{validateJob.description.notNull}")
+	@Field(index=Index.YES, analyze=Analyze.YES, store=Store.NO)
 	private String description;
 	@NotNull(message = "{validateJob.requirement.notNull}")
+	@Field(index=Index.YES, analyze=Analyze.YES, store=Store.NO)
 	private String requirement;
 
 	public enum tag {
@@ -50,6 +57,7 @@ public class Job {
 
 	@Column(columnDefinition = "enum('FULLTIME', 'PARTIME', 'INTERN', 'FREELANCE')")
 	@Enumerated(EnumType.STRING)
+	@Field(index=Index.YES, analyze=Analyze.YES, store=Store.NO)
 	private tag tag;
 
 	@NotNull(message = "{validateJob.pay.notNull}")
