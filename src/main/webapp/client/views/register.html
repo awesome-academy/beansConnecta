@@ -31,42 +31,40 @@
 					<h3 class="register-heading"
 						th:text="#{client.register.candidateTabTitle}">Apply as a
 						Candidate</h3>
-					<form 
-						class="row register-form" 
-						action="#" 
-						th:action="@{/register}"
-						th:object="${userInfo}"
-						method="post"
-					>
+					<form class="row register-form" action="#" th:action="@{/register}"
+						th:object="${userInfo}" method="post">
 						<div class="col-md-6">
+							<input type="hidden" th:value="candidate" th:attr="name=role" />
 							<div class="form-group">
 								<input type="text" class="form-control"
-									placeholder="First Name *" value="" />
+									placeholder="Full Name *" value="" th:field="*{fullName}" />
 							</div>
-							<div class="form-group">
-								<input type="text" class="form-control"
-									placeholder="Last Name *" value="" />
-							</div>
-							
+
 							<div class="form-group">
 								<input type="password" class="form-control"
-									placeholder="Password *" value="" 
-									th:field="*{password}" />
-								<p class="register-form-error" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</p>
+									placeholder="Password *" value="" th:field="*{password}" />
+								<p class="register-form-error"
+									th:if="${#fields.hasErrors('password')}"
+									th:errors="*{password}">Password Error</p>
 							</div>
-							
+
 							<div class="form-group">
 								<input type="password" class="form-control"
-									placeholder="Confirm Password *" value="" />
+									placeholder="Confirm Password *" value=""
+									th:field="*{passwordConfirm}" />
+								<p class="register-form-error" th:if="${passwordConfirmError}"
+									th:text="${passwordConfirmError}">Password Error</p>
 							</div>
-							
+
 							<div class="form-group">
 								<div class="maxl">
-									<label class="radio inline"> <input type="radio"
-										name="gender" value="male" checked> <span> Male
-									</span>
+									<label class="radio inline"> 
+									<input type="radio"
+										name="gender" th:value="male" checked th:field="*{gender}">
+										<span th:text="#{client.register.radioBtnMale}"> Male </span>
 									</label> <label class="radio inline"> <input type="radio"
-										name="gender" value="female"> <span>Female </span>
+										name="gender" th:value="female" th:field="*{gender}"> <span
+										th:text="#{client.register.radioBtnFemale}"> Female </span>
 									</label>
 								</div>
 							</div>
@@ -74,29 +72,27 @@
 						<div class="col-md-6">
 							<div class="form-group">
 								<input type="email" class="form-control"
-									placeholder="Your Email *" value="" 
-									th:field="*{email}" />
-								<p class="register-form-error" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email Error</p>
-								<p class="register-form-error" th:if="${emailExistedError}" th:text="${emailExistedError}">Password Error</p>
+									placeholder="Your Email *" value="" th:field="*{email}" />
+								<p class="register-form-error"
+									th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email
+									Error</p>
+								<p class="register-form-error" th:if="${emailExistedError}"
+									th:text="${emailExistedError}">Password Error</p>
 							</div>
 							<div class="form-group">
 								<input type="text" minlength="10" maxlength="10"
 									name="txtEmpPhone" class="form-control"
-									placeholder="Your Phone *" value="" />
+									placeholder="Your Phone *" value="" th:field="*{phone}" />
+								<p class="register-form-error"
+									th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}">Password
+									Error</p>
 							</div>
+
 							<div class="form-group">
-								<select class="form-control">
-									<option class="hidden" selected disabled>Please select
-										your Sequrity Question</option>
-									<option>What is your Birthdate?</option>
-									<option>What is Your old Phone Number</option>
-									<option>What is your Pet Name?</option>
-								</select>
+								<input type="text" class="form-control" placeholder="Address *"
+									value="" th:field="*{address}" />
 							</div>
-							<div class="form-group">
-								<input type="text" class="form-control"
-									placeholder="Enter Your Answer *" value="" />
-							</div>
+
 							<input type="submit" class="btnRegister" value="Register" />
 						</div>
 					</form>
@@ -105,55 +101,87 @@
 					aria-labelledby="profile-tab">
 					<h3 class="register-heading"
 						th:text="#{client.register.companyTabTitle}">Apply as a
-						Company</h3>
-					<div class="row register-form">
+						Company HR</h3>
+					<form class="row register-form" action="#" th:action="@{/register}"
+						th:object="${userInfo}" method="post">
 						<div class="col-md-6">
+							<input type="hidden" th:value="company" th:attr="name=role" />
 							<div class="form-group">
 								<input type="text" class="form-control"
-									placeholder="First Name *" value="" />
-							</div>
-							<div class="form-group">
-								<input type="text" class="form-control"
-									placeholder="Last Name *" value="" />
-							</div>
-							<div class="form-group">
-								<input type="email" class="form-control" placeholder="Email *"
-									value="" />
-							</div>
-							<div class="form-group">
-								<input type="text" maxlength="10" minlength="10"
-									class="form-control" placeholder="Phone *" value="" />
+									placeholder="Full Name *" value="" th:field="*{fullName}" />
 							</div>
 
+							<div class="form-group">
+								<input type="password" class="form-control"
+									placeholder="Password *" value="" th:field="*{password}" />
+								<p class="register-form-error"
+									th:if="${#fields.hasErrors('password')}"
+									th:errors="*{password}">Password Error</p>
+							</div>
+
+							<div class="form-group">
+								<input type="password" class="form-control"
+									placeholder="Confirm Password *" value=""
+									th:field="*{passwordConfirm}" />
+								<p class="register-form-error" th:if="${passwordConfirmError}"
+									th:text="${passwordConfirmError}">Password Error</p>
+							</div>
+
+							<div class="form-group">
+								<div class="maxl">
+									<label class="radio inline"> <input type="radio"
+										name="gender" value="male" checked th:field="*{gender}">
+										<span th:text="#{client.register.radioBtnMale}"> Male </span>
+									</label> <label class="radio inline"> <input type="radio"
+										name="gender" value="female" th:field="*{gender}"> <span
+										th:text="#{client.register.radioBtnFemale}"> Female </span>
+									</label>
+								</div>
+							</div>
 						</div>
 						<div class="col-md-6">
 							<div class="form-group">
-								<input type="password" class="form-control"
-									placeholder="Password *" value="" />
+								<input type="email" class="form-control"
+									placeholder="Your Email *" value="" th:field="*{email}" />
+								<p class="register-form-error"
+									th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email
+									Error</p>
+								<p class="register-form-error" th:if="${emailExistedError}"
+									th:text="${emailExistedError}">Password Error</p>
 							</div>
 							<div class="form-group">
-								<input type="password" class="form-control"
-									placeholder="Confirm Password *" value="" />
+								<input type="text" minlength="10" maxlength="10"
+									name="txtEmpPhone" class="form-control"
+									placeholder="Your Phone *" value="" th:field="*{phone}" />
+								<p class="register-form-error"
+									th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}">Password
+									Error</p>
 							</div>
+
 							<div class="form-group">
-								<select class="form-control">
-									<option class="hidden" selected disabled>Please select
-										your Sequrity Question</option>
-									<option>What is your Birthdate?</option>
-									<option>What is Your old Phone Number</option>
-									<option>What is your Pet Name?</option>
+								<input type="text" class="form-control" placeholder="Address *"
+									value="" th:field="*{address}" />
+							</div>
+
+							<div class="form-group">
+								<select class="form-control" th:field="*{companyId}">
+									<option class="hidden" value="0" selected disabled>Please select
+										your Company</option>
+									<option 
+										th:each="company : ${listCompanies}"
+										th:value="${company.id}"
+										th:text="${company.name}"
+									></option>
 								</select>
 							</div>
-							<div class="form-group">
-								<input type="text" class="form-control" placeholder="`Answer *"
-									value="" />
-							</div>
+
 							<input type="submit" class="btnRegister" value="Register" />
 						</div>
-					</div>
+					</form>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+
 </html>

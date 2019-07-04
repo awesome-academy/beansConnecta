@@ -13,6 +13,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -65,6 +67,10 @@ public class User {
 	@OneToOne(mappedBy = "user", cascade = CascadeType.ALL,
             fetch = FetchType.LAZY)
 	private Candidate candidate;
+	
+	@ManyToOne
+	@JoinColumn(name = "companyId")
+	private Company company;
 
 	public User() {
 
@@ -132,8 +138,17 @@ public class User {
 
 	public void setCandidate(Candidate candidate) {
 		this.candidate = candidate;
+		candidate.setUser(this);
 	}	
 	
+	public Company getCompany() {
+		return company;
+	}
+
+	public void setCompany(Company company) {
+		this.company = company;
+	}
+
 	@Transient
 	public List<GrantedAuthority> getAuthorities() {
 		List<GrantedAuthority> authorities = new ArrayList<>();
