@@ -12,10 +12,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class IndexController extends BaseController {
 	@RequestMapping("/")
 	public String hello(Model model) {
-		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		if(!(auth instanceof AnonymousAuthenticationToken) && auth.isAuthenticated()) {
-			model.addAttribute("currentUser", auth.getName());
-		}
 		return "client/views/index";
 	}
 
