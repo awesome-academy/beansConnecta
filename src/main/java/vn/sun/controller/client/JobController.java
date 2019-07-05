@@ -12,12 +12,13 @@ import vn.sun.helper.Paginator;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.ServletRequestUtils;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
 
 import vn.sun.entities.Job;
 import vn.sun.services.client.CompanyServices;
@@ -32,7 +33,7 @@ public class JobController extends BaseController {
 	@Autowired(required = true)
 	private CompanyServices companyService;
 
-	@RequestMapping("/")
+	@GetMapping("/")
 	public String index(HttpServletRequest request, @RequestParam("keyword") Optional<String> keyword, ModelMap modelMap) {
 		Integer page = ServletRequestUtils.getIntParameter(request, "page", 0);
 		Integer firstResult = page * Constants.JOB_PAGESIZE;
@@ -45,12 +46,28 @@ public class JobController extends BaseController {
 		modelMap.addAttribute("keyword", searchKeyword);
 		return "client/views/jobs/index-jobs";
 	}
+	
+	 @GetMapping(value = "/addJob")
+	 public String createView() {
+		 return "client/views/jobs/create-job";
+	 }
+	 
+	 @GetMapping("/{id}")
+	 public String info(@PathVariable("id") Integer id, final ModelMap modelMap) {
+		 Job job = jobService.findById(id);
+		 if (job == null) {
+			 return "client/views/errors/404";
+		 }
+		 modelMap.addAttribute("job", job);
+		 return "client/views/jobs/info-job";
+	 }
 
 	protected Map<String, Object> paginateSearch(String keyword, Integer firstResult, Integer maxResults) {
-		long total = jobService.countJobs(keyword);
+		Long total = jobService.countJobs(keyword);
 		Paginator myPaginator = new Paginator();
 		Page page = myPaginator.getPage(firstResult, Constants.JOB_PAGESIZE, total);
-		return buildListModel(jobService.search(keyword, page.getFirstResult(), page.getMaxResults()), page);
+		List<Job> listJob = jobService.search(keyword, firstResult, maxResults);
+		return buildListModel(listJob, page);
 	}
 
 	private Map<String, Object> buildListModel(List<Job> jobs, Page page) {
@@ -60,10 +77,6 @@ public class JobController extends BaseController {
 		model.put("total", page.getTotal());
 		model.put("firstResult", page.getFirstResult());
 		model.put("maxResults", page.getMaxResults());
-		model.put("nextResult", page.getNextResult());
-		model.put("prevResult", page.getPrevResult());
-		model.put("startResult", page.getStartResult());
-		model.put("lastResult", page.getLastResult());
 		model.put("lastPage", (int)((page.getTotal()-1) / page.getMaxResults()));
 		return model;
 	}

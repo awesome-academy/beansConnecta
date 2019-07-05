@@ -132,7 +132,7 @@
 												<span class="icon-heart"></span>
 											</a>
 										</div>
-										<a href="job-single.html" class="btn btn-primary py-2"
+										<a th:href="@{'/jobs/' + ${job.id}}" class="btn btn-primary py-2"
 											th:text="#{client.job.applyJob}"></a>
 									</div>
 								</div>

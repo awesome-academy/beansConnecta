@@ -3,6 +3,7 @@ package vn.sun.DAO.client.impl;
 import java.io.Serializable;
 import java.util.List;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import org.apache.lucene.search.Query;
 import org.hibernate.search.FullTextSession;
@@ -17,7 +18,7 @@ import vn.sun.entities.Job;
 @Repository
 public class JobDAOImpl extends AbstractBaseDAO<Serializable, Job> implements JobDAO {
 
-	private static final Logger logger = Logger.getLogger(JobDAOImpl.class);
+
 
 	@SuppressWarnings("unchecked")
 	@Override
@@ -35,10 +36,9 @@ public class JobDAOImpl extends AbstractBaseDAO<Serializable, Job> implements Jo
 	@SuppressWarnings("unchecked")
 	@Override
 	public Long countJobs(String keyword) {
-		if (keyword == "" || keyword == null) {
+		if (StringUtils.isBlank(keyword) || keyword.length()==0) {
 			return (Long) getSession().createQuery("select count(*) from Job").iterate().next();
 		}
-		
 		FullTextSession fullTextSession = Search.getFullTextSession(getSession());
 		return (long) fullTextSession.createFullTextQuery(
 				luceneQuery(fullTextSession, keyword), Job.class)
@@ -56,7 +56,7 @@ public class JobDAOImpl extends AbstractBaseDAO<Serializable, Job> implements Jo
 			logger.error("Create lucene index failed");
 		}
 
-		if (keyword == null || keyword == "") {
+		if (!StringUtils.isBlank(keyword) || keyword.length()==0) {
 			return loadJobs(firstResult, maxResult);
 		}
 		
@@ -77,7 +77,7 @@ public class JobDAOImpl extends AbstractBaseDAO<Serializable, Job> implements Jo
 				.fuzzy()
 				.withEditDistanceUpTo(2).withPrefixLength(0)
 				.onFields("title", "description", "requirement")
-				.matching(keyword + "*").createQuery();
+				.matching(keyword).createQuery();
 	}
-	
+
 }
