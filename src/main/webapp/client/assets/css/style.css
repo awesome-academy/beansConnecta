@@ -9956,3 +9956,13 @@ textarea.form-control {
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
+
+   
+.nav-btn {
+	margin: 0.25rem 0 0 0;
+	padding: 10px 1.25rem; 
+}
+
+.nav-btn-marleft {
+	margin-left: 0.25rem !important;
+}
