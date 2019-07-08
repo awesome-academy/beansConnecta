@@ -1,5 +1,7 @@
 package vn.sun.controller.client;
 
+import javax.servlet.ServletContext;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 
@@ -21,6 +23,8 @@ public class BaseController {
 	protected CandidateServices candidateService;
 	@Autowired
 	protected JobServices jobService;
+	@Autowired
+	ServletContext servletContext;
 	
 	@Autowired
 	protected MessageSource messageSource;
