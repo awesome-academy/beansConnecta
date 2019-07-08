@@ -27,4 +27,9 @@ public class IndexController extends BaseController {
 	public String logout(final Model model) {
 		return "login";
 	}
+	
+	@RequestMapping("/about")
+	public String about() {
+		return "client/views/about";
+	}
 }
