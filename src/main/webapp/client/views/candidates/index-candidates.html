@@ -3,7 +3,7 @@
   xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
   layout:decorate="client/views/fragments/base-layout">
 
-  <title th:text="#{client.companies.title}"></title>
+  <title th:text="#{client.candidates.title}"></title>
   <div layout:fragment="content">
     <div class="container">
       <div class="job-search-box">
@@ -95,21 +95,21 @@
 
                 <div class="img">
                   <img
-                    th:src="@{/client/assets/images/company-default.png}"
+                    th:src="@{/client/assets/images/candidate-default.png}"
                     />
                 </div>
                 <div class="text pl-md-4">
                   <span th:text="${candidate.name}"
                     class="location mb-0"></span>
-                  <h2 th:text="${candidate.phone}"></h2>
+                  <h2 th:text="${candidate.city}"></h2>
                   <span th:text="${candidate.dob}"
                     class="position"></span>
-                  <p th:text="${candidate.description}"></p>
-                  <span th:text="${company.address}"
+                  <p th:text="${candidate.role}"></p>
+                  <span th:text="${candidate.address}"
                     class="seen"></span>
                   <p>
                     <a href="#" class="btn btn-primary"
-                      th:text="#{client.companies.explore}"></a>
+                      th:text="#{client.candidates.explore}"></a>
                   </p>
                 </div>
               </div>
