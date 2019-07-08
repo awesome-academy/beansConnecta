@@ -45,6 +45,10 @@ public class Candidate {
     @Column(name = "image", columnDefinition="BLOB")
     private byte[] image;
 	
+	@Lob
+    @Column(name = "cvfile", columnDefinition="BLOB")
+    private byte[] cvfile;
+	
 	@Column(name="city")
 	private String city;
 	
@@ -181,4 +185,12 @@ public class Candidate {
 		this.jobs = jobs;
 	}
 
+	public byte[] getCvfile() {
+		return cvfile;
+	}
+
+	public void setCvfile(byte[] cvfile) {
+		this.cvfile = cvfile;
+	}
+	
 }

@@ -72,6 +72,11 @@ public class UserServicesImpl implements UserServices {
 			return null;
 		}
 	}
+	
+	@Override
+	public User findByEmail(String email) {
+		return userDAO.findUserByEmail(email);
+	}
 
 	@Override
 	public void delete(User user) {
