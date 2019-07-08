@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.Logger;
 import org.apache.lucene.search.Query;
 import org.hibernate.search.FullTextSession;
 import org.hibernate.search.Search;
@@ -56,7 +55,7 @@ public class JobDAOImpl extends AbstractBaseDAO<Serializable, Job> implements Jo
 			logger.error("Create lucene index failed");
 		}
 
-		if (!StringUtils.isBlank(keyword) || keyword.length()==0) {
+		if (StringUtils.isBlank(keyword) || keyword.length()==0) {
 			return loadJobs(firstResult, maxResult);
 		}
 		
